@@ -9,9 +9,24 @@
 			{
 				"url": "./.schemas/4.0.1/resource.json",
 				"fileMatch": [
-					"/ig/*-r4/input/*.json"
+					"/ig/*-r4/input/**/*.json",
+					"/examples/**/*-r4.json"
+				]
+			},
+			{
+				"url": "./.schemas/4.0.1/example.json",
+				"fileMatch": [
+					"/examples/**/*-r4e.json"
 				]
 			}
-		]
+		],
+		"yaml.schemas": {
+			"./.schemas/4.0.1/resource.json": [
+				"/ig/*-r4/input/**/*.yaml",
+				"/examples/**/*-r4.yaml"
+			]
+		},
+		"json.maxItemsComputed": 50000,
+		"editor.tabSize": 2,
 	}
 }
