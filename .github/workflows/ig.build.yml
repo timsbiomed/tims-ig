@@ -8,8 +8,6 @@ on:
   workflow_call:
     inputs:
 
-      # branch/PR home repo
-      # TODO: can do without this by using ${{ github... }}
       owner-repo:
         description: This owner/repo-name
         type: string
@@ -31,24 +29,10 @@ on:
         required: true
         type: string
 
-#      run-sushi:
-#        description: If sushi should run
-#        type: string
-#        default: "true"
-
-#      sushi-args:
-#        description: The parameters to pass to the sushi command. Keep in mind that the IG root folder is at /ig.
-#        type: string
-
       docker-publisher-tag:
         description: "The Docker publisher tag to use from: https://hub.docker.com/repository/docker/sessaid/ig-publisher/tags"
         type: string
         default: latest
-
-#      docker-sushi-tag:
-#        description: "The Docker SUSHI tag to use from: https://hub.docker.com/repository/docker/sessaid/sushi/tags"
-#        type: string
-#        default: latest
 
       base-ref:
         description: A base ref if the ref should be merged into it to try a merge build. This is used for PRs.
@@ -71,16 +55,6 @@ on:
       io-path:
         description: "A path to publish under. If not set, a default is calculated. TODO: document this."
         type: string
-
-#      expected-event:
-#        description: The expected event type for running this build. It's needed for the if condition
-#        type: string
-#        required: true
-#
-#      event:
-#        description: The actual event type.
-#        type: string
-#        required: true
 
     secrets:
       output-token:
@@ -166,9 +140,7 @@ jobs:
           else
             echo "::set-output name=skip::true"
           fi
-          
 
-          
       - name: Publish merged
         if: inputs.base-ref != '' && inputs.io-repo != ''
         run: |  
