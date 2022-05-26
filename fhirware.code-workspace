@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"json.schemas": [
+			{
+				"url": "./.schemas/4.0.1/resource.json",
+				"fileMatch": [
+					"/ig/*-r4/input/*.json"
+				]
+			}
+		]
+	}
+}

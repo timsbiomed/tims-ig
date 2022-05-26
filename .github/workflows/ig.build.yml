@@ -1,0 +1,199 @@
+name: IG build and publish
+
+defaults:
+  run:
+    shell: bash
+
+on:
+  workflow_call:
+    inputs:
+
+      # branch/PR home repo
+      # TODO: can do without this by using ${{ github... }}
+      owner-repo:
+        description: This owner/repo-name
+        type: string
+        required: true
+
+      ref:
+        description: The ref to build.
+        type: string
+        required: true
+
+      # build related
+      ig-root:
+        description: The relative path, in the repo, to the IG root folder. This folder is mounted to /ig in the Docker container.
+        required: true
+        type: string
+
+      publisher-args:
+        description: The parameters to pass to the publisher.jar. Keep in mind that the IG root folder is at /ig.
+        required: true
+        type: string
+
+#      run-sushi:
+#        description: If sushi should run
+#        type: string
+#        default: "true"
+
+#      sushi-args:
+#        description: The parameters to pass to the sushi command. Keep in mind that the IG root folder is at /ig.
+#        type: string
+
+      docker-publisher-tag:
+        description: "The Docker publisher tag to use from: https://hub.docker.com/repository/docker/sessaid/ig-publisher/tags"
+        type: string
+        default: latest
+
+#      docker-sushi-tag:
+#        description: "The Docker SUSHI tag to use from: https://hub.docker.com/repository/docker/sessaid/sushi/tags"
+#        type: string
+#        default: latest
+
+      base-ref:
+        description: A base ref if the ref should be merged into it to try a merge build. This is used for PRs.
+        type: string
+
+      # publication related
+      io-owner:
+        description: The owner of the IO repo
+        type: string
+
+      io-repo:
+        description: If set, it is a GitHub dedicated repository (repo name only) for publishing the IG's output.
+        type: string
+
+      io-branch:
+        description: The branch to use for publishing the IG's output. gh-pages by default so it works on github.io
+        type: string
+        default: gh-pages
+
+      io-path:
+        description: "A path to publish under. If not set, a default is calculated. TODO: document this."
+        type: string
+
+#      expected-event:
+#        description: The expected event type for running this build. It's needed for the if condition
+#        type: string
+#        required: true
+#
+#      event:
+#        description: The actual event type.
+#        type: string
+#        required: true
+
+    secrets:
+      output-token:
+        description: A read/write token to the publication repository.
+        required: true
+jobs:
+  docker-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout IG
+        uses: actions/checkout@v3
+        with:
+          repository: ${{ inputs.owner-repo }}
+          ref: ${{ inputs.ref }}
+          path: ig-clone
+
+      - name: Build IG branch
+        id: branch
+        run: |
+          set -x
+          git config --global user.name 'Publisher IO'
+          git config --global user.email 'shahim@essaid.com'
+          cd ig-clone
+          echo "::set-output name=sha::$(git rev-parse HEAD)"
+          echo Running IG build with inputs: '${{ toJSON(inputs) }}'
+          #mkdir -p "${{inputs.ig-root}}/output"; echo hello branch build $(date) > "${GITHUB_WORKSPACE}/ig-clone/${{inputs.ig-root}}/output/index.html"
+          #docker pull "sessaid/ig-publisher:${{inputs.docker-publisher-tag}}"
+          docker run --rm --volume "${GITHUB_WORKSPACE}/ig-clone/${{inputs.ig-root}}:/ig" "sessaid/ig-publisher:${{inputs.docker-publisher-tag}}"  ${{ inputs.publisher-args }}
+
+      # Publish if requested
+      - name: Checkout IO branch
+        if: inputs.io-repo != ''
+        uses: actions/checkout@v3
+        with:
+          repository: ${{ inputs.io-owner }}/${{ inputs.io-repo }}
+          ref: ${{ inputs.io-branch }}
+          path: io-clone
+          token: ${{ secrets.output-token }}
+
+      - name: Publish branch
+        if: inputs.io-repo != ''
+        run: |
+          set -x
+          cd io-clone
+          git pull origin ${{ inputs.io-branch }}
+          [[ -d "${{ inputs.io-path }}" ]] &&  rm -rf "${{ inputs.io-path }}"
+          mkdir -p "${{ inputs.io-path }}"
+          cp -ra "../ig-clone/${{inputs.ig-root}}/output"/* "${{ inputs.io-path }}"
+          if [[ ! -f  "IG_BUILDS.md" ]]; then
+            echo '# IG Builds  ' > IG_BUILDS.md
+          fi
+          { 
+            cat IG_BUILDS.md |  grep -v '${{ inputs.io-path }}' ; 
+            printf '%s  \n' "[${{ inputs.io-path }}](https://${{ inputs.io-owner }}.github.io/${{ inputs.io-repo }}/${{ inputs.io-path }}/index.html?version=${{steps.branch.outputs.sha}})";
+          } | sort > IG_BUILDS.md.new
+          mv -f IG_BUILDS.md.new IG_BUILDS.md
+
+      - name: If merge
+        id: merge
+        if: inputs.base-ref != ''
+        # try to merge and build again
+        # TODO: try to optimize the full fetch
+        run: |
+          set -x
+          echo doing base merge and build
+          cd ig-clone
+          git fetch --unshallow
+          git clean -fdx
+          git remote add upstream "https://github.com/${{ github.repository }}"
+          git fetch --all
+          git checkout -b upstream-${{ inputs.base-ref }} --track  "upstream/${{ inputs.base-ref }}"
+          if ! git merge-base --is-ancestor upstream-${{ inputs.base-ref }} upstream/${{ inputs.base-ref }}; then
+            if git merge "${{ inputs.ref }}"; then
+              echo "::set-output name=sha::$(git rev-parse HEAD)"
+              echo merge was successful
+              #mkdir -p "${{inputs.ig-root}}/output"; echo hello merged branch build $(date) > "${{inputs.ig-root}}/output/index.html"
+              docker run --rm --volume "${GITHUB_WORKSPACE}/ig-clone/${{inputs.ig-root}}:/ig" "sessaid/ig-publisher:${{inputs.docker-publisher-tag}}"  ${{ inputs.publisher-args }}
+            else
+              echo merge has conflicts
+              git merge --abort
+            fi
+            echo "::set-output name=skip::false"
+          else
+            echo "::set-output name=skip::true"
+          fi
+          
+
+          
+      - name: Publish merged
+        if: inputs.base-ref != '' && inputs.io-repo != ''
+        run: |  
+          set -x
+          cd io-clone
+          [[ -d "${{ inputs.io-path }}--merged" ]] &&  rm -rf "${{ inputs.io-path }}--merged"
+          if [[ ${{ steps.merge.outputs.skip }} == false ]]; then
+            mkdir -p "${{ inputs.io-path }}--merged"
+            cp -ra "../ig-clone/${{inputs.ig-root}}/output"/* "${{ inputs.io-path }}--merged"
+            { 
+              cat IG_BUILDS.md;
+              printf '%s  \n' "[${{ inputs.io-path }}--merged](https://${{ inputs.io-owner }}.github.io/${{ inputs.io-repo }}/${{ inputs.io-path }}--merged/index.html?version=${{steps.merge.outputs.sha}})";
+            } | sort > IG_BUILDS.md.new
+            mv -f IG_BUILDS.md.new IG_BUILDS.md
+          fi
+
+      - name: Push IO
+        if: inputs.io-repo != ''
+        run: |
+          #set -x
+          cd io-clone
+          git add -A
+          if [[ -z "$(git status --porcelain)" ]]; then
+            echo NO changes
+          else
+            git commit -m "IG: ${{ inputs.owner-repo }}, ref: ${{ inputs.ref }}  run_id: ${{ github.run_id }}, run_number: ${{ github.run_number }}, run_attempt: ${{ github.run_attempt }} with branch SHA: ${{steps.branch.outputs.sha}} and merge SHA: ${{steps.merge.outputs.sha}}"
+            git push
+          fi

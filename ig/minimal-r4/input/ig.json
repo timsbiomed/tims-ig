@@ -1,0 +1,42 @@
+{
+    "resourceType": "ImplementationGuide",
+    "id": "minimalr4",
+    "url": "http://example.com/minimal-r4/ImplementationGuide/minimalr4",
+    "version": "0.0.1",
+    "name": "Minimalr4",
+    "status": "draft",
+    "packageId": "minimalr4",
+    "fhirVersion": [
+        "4.0.1"
+    ],
+    "definition": {
+        "parameter": [
+            {
+                "code": "path-resource",
+                "value": "input\resources"
+            },
+            {
+                "code": "releaselabel",
+                "value": "Demo build"
+            },
+            {
+                "code": "copyrightyear",
+                "value": "2022+"
+            }
+        ],
+
+        "page": {
+            "nameUrl": "toc.html",
+            "title": "Table of Contents",
+            "generation": "html",
+            "page": [
+                {
+                    "nameUrl": "index.html",
+                    "title": "IG Home Page",
+                    "generation": "html"
+                }
+            ]
+        }
+    }
+
+}
