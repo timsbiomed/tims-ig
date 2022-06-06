@@ -1,0 +1,19 @@
+{
+  "resourceType": "ConceptMap",
+  "group": [
+    {
+      "source": "a",
+      "target": "b",
+      "element": [
+        {
+          "code": "code-a",
+          "target": [
+            {
+              "code": "code-a-target"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
