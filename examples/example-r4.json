@@ -8,9 +8,6 @@
         {
           "code": "code-a",
           "target": [
-            {
-              "code": "code-a-target"
-            }
           ]
         }
       ]
