@@ -3,7 +3,6 @@ name: IG build entry workflow
 env:
   IG_ROOT: "ig/ig-starter-r4"
   DOCKER_PUBLISHER_TAG: latest
-  DOCKER_SUSHI_TAG: ''
   PUBLISHER_ARGS: "-ig /ig/ig.ini"
   IO_OWNER: ShahimEssaid
   IO_REPO: tmp-io
