@@ -5,7 +5,7 @@ name: IG build entry workflow
 #    important but it helps to match the IG folder name. Remove the .off suffix if there is one.
 # 2. Set the env variables to match your setup.
 # 3. Adjust the paths under the `on.push.paths`  and `on.pull_request_target.paths` keys to match your IG's directory.
-# 4. Set up a GitHub Actions secret in this repository for the token of the publishing repository so the build can push to it. the secrete is named secrets.PUBLISHER_IO
+# 4. Set up a GitHub Actions secret in this repository for the PAT token to write to the publishing repository so the build can push to it. the secrete is named secrets.PUBLISHER_IO
 # 5. Enable GitHub actions and write access to this repository.
 # 6.
 env:
