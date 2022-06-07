@@ -1,13 +1,21 @@
 name: IG build entry workflow
 
+# Setup:
+# 1. Copy this file and name it to match the IG folder name to help relate the file to the IG. The file name it not
+#    important but it helps to match the IG folder name. Remove the .off suffix if there is one.
+# 2. Set the env variables to match your setup.
+# 3. Adjust the paths under the `on.push.paths`  and `on.pull_request_target.paths` keys to match your IG's directory.
+# 4. Set up a GitHub Actions secret in this repository for the token of the publishing repository so the build can push to it. the secrete is named secrets.PUBLISHER_IO
+# 5. Enable GitHub actions and write access to this repository.
+# 6.
 env:
-  IG_ROOT: "ig/minimal-r4"
-  DOCKER_PUBLISHER_TAG: latest
-  PUBLISHER_ARGS: "-ig /ig/ig.ini"
-  IO_OWNER: ShahimEssaid
-  IO_REPO: tmp-io
-  IO_BRANCH: gh-pages
-  IO_PATH_PREFIX: ''
+  IG_ROOT: "ig/minimal-r4"  # The relative folder path of the IG root directory
+  DOCKER_PUBLISHER_TAG: latest  # The Docker tag for the Publisher version wanted for the build from: https://hub.docker.com/repository/docker/sessaid/ig-publisher
+  PUBLISHER_ARGS: "-ig /ig/ig.ini"  # the publisher command line arguments
+  IO_OWNER: ShahimEssaid  #  The owner of a GitHub repository that will be used for publishing the built IG's output
+  IO_REPO: tmp-io  # The repository to publish to
+  IO_BRANCH: gh-pages  # The branch to publish to
+  IO_PATH_PREFIX: ''  # An optional path prefix (from the root of the repo) to publish to. No leading slash but with a trailing slash
 
 defaults:
   run:
@@ -26,7 +34,6 @@ on:
     paths:
       - ig/minimal-r4/**
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
 
   # Do any setup needed to create job output parameters needed to the later build job
@@ -86,7 +93,7 @@ jobs:
 
   build:
     needs: vars
-    uses: ./.github/workflows/ig.build.yml
+    uses: ./.github/workflows/ig-build.yml
     secrets:
       output-token: ${{ secrets.PUBLISHER_IO }}
     with:

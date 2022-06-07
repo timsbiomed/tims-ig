@@ -86,7 +86,7 @@ jobs:
 
   build:
     needs: vars
-    uses: ./.github/workflows/ig.build.yml
+    uses: ./.github/workflows/ig-build.yml
     secrets:
       output-token: ${{ secrets.PUBLISHER_IO }}
     with:
