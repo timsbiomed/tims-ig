@@ -9,7 +9,7 @@ name: IG build entry workflow
 # 5. Enable GitHub actions and write access to this repository.
 # 6.
 env:
-  IG_ROOT: "ig/minimal-r4"  # The relative folder path of the IG root directory
+  IG_ROOT: "fw-ig/minimal-r4"  # The relative folder path of the IG root directory
   DOCKER_PUBLISHER_TAG: latest  # The Docker tag for the Publisher version wanted for the build from: https://hub.docker.com/repository/docker/sessaid/ig-publisher
   PUBLISHER_ARGS: "-ig /ig/ig.ini"  # the publisher command line arguments
   IO_OWNER: ShahimEssaid  #  The owner of a GitHub repository that will be used for publishing the built IG's output
@@ -27,12 +27,12 @@ concurrency:
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main, master ]
+    branches: [ main, master, dev ]
     paths:
-      - ig/minimal-r4/**
+      - fw-ig/minimal-r4/**
   pull_request_target:
     paths:
-      - ig/minimal-r4/**
+      - fw-ig/minimal-r4/**
 
 jobs:
 
@@ -93,7 +93,7 @@ jobs:
 
   build:
     needs: vars
-    uses: ./.github/workflows/ig-build.yml
+    uses: ./.github/workflows/fw-ig-build-callable.yml
     secrets:
       output-token: ${{ secrets.PUBLISHER_IO }}
     with:
