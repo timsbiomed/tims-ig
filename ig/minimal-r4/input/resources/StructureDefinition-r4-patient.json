@@ -1,0 +1,27 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "r4-patient",
+
+  "url": "http://example.com/minimal-r4/StructureDefinition/r4-patient",
+  "version": "0.0.1",
+  "name": "R4Patient",
+  "title": "R4 Patient",
+  "status": "active",
+  "description": "A patient that is a type of R4.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Patient",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Patient.name",
+        "path": "Patient.name",
+        "min": 1
+      }
+    ]
+  },
+  "copyright": "Somemthing"
+}
