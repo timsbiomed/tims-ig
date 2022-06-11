@@ -1,11 +1,11 @@
 name: IG build entry workflow
 
 env:
-  IG_ROOT: "ig/ig-starter-r4"
+  IG_ROOT: "fw-ig/starter-r4"
   DOCKER_PUBLISHER_TAG: latest
   PUBLISHER_ARGS: "-ig /ig/ig.ini"
-  IO_OWNER: ShahimEssaid
-  IO_REPO: tmp-io
+  IO_OWNER: [a github user here]
+  IO_REPO: [a github repo with the branch listed below]
   IO_BRANCH: gh-pages
   IO_PATH_PREFIX: ''
 
@@ -21,10 +21,10 @@ on:
   push:
     branches: [ main, master ]
     paths:
-      - ig/ig-starter-r4/**
+      - fw-ig/starter-r4/**
   pull_request_target:
     paths:
-      - ig/ig-starter-r4/**
+      - fw-ig/starter-r4/**
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
