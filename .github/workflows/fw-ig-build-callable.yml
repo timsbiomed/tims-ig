@@ -106,11 +106,13 @@ jobs:
           if [[ ! -f  "IG_BUILDS.md" ]]; then
             echo '# IG Builds  ' > IG_BUILDS.md
           fi
+          IGLink="[${{ inputs.io-path }}](https://${{ inputs.io-owner }}.github.io/${{ inputs.io-repo }}/${{ inputs.io-path }}/index.html?version=${{steps.branch.outputs.sha}})"
           { 
             cat IG_BUILDS.md |  grep -v '${{ inputs.io-path }}' ; 
-            printf '%s  \n' "[${{ inputs.io-path }}](https://${{ inputs.io-owner }}.github.io/${{ inputs.io-repo }}/${{ inputs.io-path }}/index.html?version=${{steps.branch.outputs.sha}})";
+            printf '%s  \n' "$IGLink";
           } | sort > IG_BUILDS.md.new
           mv -f IG_BUILDS.md.new IG_BUILDS.md
+           echo "Branch IG build site: $IGLink" >> $GITHUB_STEP_SUMMARY
 
       - name: If merge
         id: merge
@@ -150,11 +152,13 @@ jobs:
           if [[ ${{ steps.merge.outputs.skip }} == false ]]; then
             mkdir -p "${{ inputs.io-path }}--merged"
             cp -ra "../ig-clone/${{inputs.ig-root}}/output"/* "${{ inputs.io-path }}--merged"
+            IGLink="[${{ inputs.io-path }}--merged](https://${{ inputs.io-owner }}.github.io/${{ inputs.io-repo }}/${{ inputs.io-path }}--merged/index.html?version=${{steps.merge.outputs.sha}})"
             { 
               cat IG_BUILDS.md;
-              printf '%s  \n' "[${{ inputs.io-path }}--merged](https://${{ inputs.io-owner }}.github.io/${{ inputs.io-repo }}/${{ inputs.io-path }}--merged/index.html?version=${{steps.merge.outputs.sha}})";
+              printf '%s  \n' "$IGLink";
             } | sort > IG_BUILDS.md.new
             mv -f IG_BUILDS.md.new IG_BUILDS.md
+            echo "Merge IG build site: $IGLink" >> $GITHUB_STEP_SUMMARY
           fi
 
       - name: Push IO
