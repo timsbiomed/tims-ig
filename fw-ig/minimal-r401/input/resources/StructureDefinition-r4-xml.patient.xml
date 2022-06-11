@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="r4-xml.patient" />
+  <url value="http://example.com/minimal-r401/StructureDefinition/r4-xml.patient"/>
+  <version value="0.0.1"/>
+  <name value="R4XmlPatient"/>
+  <title value="R4 XML Patient"/>
+  <status value="draft"/>
+  <description value="A R4 XML Patient profile"/>
+  <fhirVersion value="4.0.1"/>
+  <kind value="resource"/>
+  <abstract value="false"/>
+  <type value="Patient"/>
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Patient"/>
+  <derivation value="constraint"/>
+</StructureDefinition>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="minimal-r401" />
+  <url value="http://example.com/minimal-r401/ImplementationGuide/minimal-r401" />
+  <version value="0.0.1" />
+  <name value="MinimalR401IG" />
+  <status value="draft" />
+  <contact>
+    <telecom>
+      <system value="url" />
+      <value value="http://example.com" />
+    </telecom>
+  </contact>
+  <packageId value="minimal-r401" />
+  <fhirVersion value="4.0.1" />
+  <definition>
+
+    <resource>
+      <reference>
+        <reference value="StructureDefinition/r4-xml.patient" />
+      </reference>
+    </resource>
+
+    <page>
+      <nameUrl value="toc.html" />
+      <title value="Table of Contents" />
+      <generation value="html" />
+      <page>
+        <nameUrl value="index.html" />
+        <title value="Minimal R401 IG" />
+        <generation value="html" />
+      </page>
+    </page>
+
+    <parameter>
+      <code value="path-resource" />
+      <value value="input/resources" />
+    </parameter>
+
+    <parameter>
+      <code value="find-other-resources" />
+      <value value="true" />
+    </parameter>
+    <parameter>
+      <code value="releaselabel" />
+      <value value="Demo build" />
+    </parameter>
+    <parameter>
+      <code value="copyrightyear" />
+      <value value="2022+" />
+    </parameter>
+    <parameter>
+      <code value="shownav" />
+      <value value="true" />
+    </parameter>
+
+
+  </definition>
+</ImplementationGuide>

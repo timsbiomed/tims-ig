@@ -1,0 +1,59 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "minimal-r401",
+  "url": "http://example.com/minimal-r401/ImplementationGuide/minimalr4",
+  "version": "0.0.1",
+  "name": "Minimalr4",
+  "status": "draft",
+  "packageId": "minimalr4",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://example.com"
+        }
+      ]
+    }
+  ],
+  "definition": {
+    "resource": [],
+    "parameter": [
+      {
+        "code": "find-other-resources",
+        "value": "true"
+      },
+      {
+        "code": "path-resource",
+        "value": "input\resources"
+      },
+      {
+        "code": "releaselabel",
+        "value": "Demo build"
+      },
+      {
+        "code": "copyrightyear",
+        "value": "2022+"
+      },
+      {
+        "code": "shownav",
+        "value": "true"
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": [
+        {
+          "nameUrl": "index.html",
+          "title": "IG Home Page",
+          "generation": "html"
+        }
+      ]
+    }
+  }
+}
