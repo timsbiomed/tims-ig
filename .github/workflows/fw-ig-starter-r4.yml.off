@@ -2,7 +2,7 @@ name: IG build entry workflow
 
 env:
   IG_ROOT: "fw-ig/starter-r4"
-  DOCKER_PUBLISHER_TAG: 1.1.118-latest
+  DOCKER_PUBLISHER_TAG: latest
   PUBLISHER_ARGS: "-ig /ig/ig.ini"
   IO_OWNER: [a github user here]
   IO_REPO: [a github repo with the branch listed below]
