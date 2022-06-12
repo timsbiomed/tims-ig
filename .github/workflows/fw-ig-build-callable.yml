@@ -64,14 +64,14 @@ jobs:
   docker-build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout IG
+      - name: Checkout IG ${{ inputs.owner-repo }}/${{inputs.ig-root}} ref:${{ inputs.ref }}
         uses: actions/checkout@v3
         with:
           repository: ${{ inputs.owner-repo }}
           ref: ${{ inputs.ref }}
           path: ig-clone
 
-      - name: Build IG branch
+      - name: Building IG
         id: branch
         run: |
           set -x
@@ -85,7 +85,7 @@ jobs:
           docker run --rm --volume "${GITHUB_WORKSPACE}/ig-clone/${{inputs.ig-root}}:/ig" "sessaid/ig-publisher:${{inputs.docker-publisher-tag}}"  ${{ inputs.publisher-args }}
 
       # Publish if requested
-      - name: Checkout IO branch
+      - name: Checking out IO repo
         if: inputs.io-repo != ''
         uses: actions/checkout@v3
         with:
@@ -94,7 +94,7 @@ jobs:
           path: io-clone
           token: ${{ secrets.output-token }}
 
-      - name: Publish branch
+      - name: Publishing IG branch
         if: inputs.io-repo != ''
         run: |
           set -x
@@ -112,9 +112,9 @@ jobs:
             printf '%s  \n' "$IGLink";
           } | sort > IG_BUILDS.md.new
           mv -f IG_BUILDS.md.new IG_BUILDS.md
-           echo "Branch IG build site: $IGLink" >> $GITHUB_STEP_SUMMARY
+          echo "Branch IG build site: $IGLink" >> $GITHUB_STEP_SUMMARY
 
-      - name: If merge
+      - name: Building merge with base if needed
         id: merge
         if: inputs.base-ref != ''
         # try to merge and build again
@@ -143,7 +143,7 @@ jobs:
             echo "::set-output name=skip::true"
           fi
 
-      - name: Publish merged
+      - name: Publishing IG merged build
         if: inputs.base-ref != '' && inputs.io-repo != ''
         run: |  
           set -x
@@ -161,7 +161,7 @@ jobs:
             echo "Merge IG build site: $IGLink" >> $GITHUB_STEP_SUMMARY
           fi
 
-      - name: Push IO
+      - name: Pushing IO repo
         if: inputs.io-repo != ''
         run: |
           #set -x

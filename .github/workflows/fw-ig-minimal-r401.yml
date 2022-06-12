@@ -12,8 +12,8 @@ env:
   IG_ROOT: "fw-ig/minimal-r401"  # The relative folder path of the IG root directory
   DOCKER_PUBLISHER_TAG: 1.1.118-latest  # The Docker tag for the Publisher version wanted for the build from: https://hub.docker.com/repository/docker/sessaid/ig-publisher
   PUBLISHER_ARGS: "-ig /ig/ig.ini"  # the publisher command line arguments
-  IO_OWNER: [a github user here]  #  The owner of a GitHub repository that will be used for publishing the built IG's output
-  IO_REPO: [a github repo with the branch listed below]  # The repository to publish to
+  IO_OWNER:  #  The owner of a GitHub repository that will be used for publishing the built IG's output
+  IO_REPO:  # The repository to publish to
   IO_BRANCH: gh-pages  # The branch to publish to
   IO_PATH_PREFIX: ''  # An optional path prefix (from the root of the repo) to publish to. No leading slash but with a trailing slash
 
