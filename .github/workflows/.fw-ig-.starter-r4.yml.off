@@ -1,7 +1,7 @@
 name: IG build entry workflow
 
 env:
-  IG_ROOT: "fw-ig/starter-r4"
+  IG_ROOT: "fw-ig/.starter-r4"
   DOCKER_PUBLISHER_TAG: latest
   PUBLISHER_ARGS: "-ig /ig/ig.ini"
   IO_OWNER: [a github user here]
@@ -21,10 +21,10 @@ on:
   push:
     branches: [ main, master ]
     paths:
-      - fw-ig/starter-r4/**
+      - fw-ig/.starter-r4/**
   pull_request_target:
     paths:
-      - fw-ig/starter-r4/**
+      - fw-ig/.starter-r4/**
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -86,7 +86,7 @@ jobs:
 
   build:
     needs: vars
-    uses: ./.github/workflows/ig-build.yml
+    uses: ./.github/workflows/.fw-ig-build-callable.yml
     secrets:
       output-token: ${{ secrets.PUBLISHER_IO }}
     with:
