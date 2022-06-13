@@ -30,6 +30,8 @@ on:
     branches: [ main, master, dev ]
     paths:
       - fw-ig/minimal-r401/**
+      - .github/workflows/fw-ig-minimal-r401.yml
+      - .github/workflows/fw-ig-build-callable.yml
   pull_request_target:
     paths:
       - fw-ig/minimal-r401/**
