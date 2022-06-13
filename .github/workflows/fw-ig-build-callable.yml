@@ -56,6 +56,10 @@ on:
         description: "A path to publish under. If not set, a default is calculated. TODO: document this."
         type: string
 
+      debug:
+        description: "Turn on some debugging output to the job summary"
+        type: string
+
     secrets:
       output-token:
         description: A read/write token to the publication repository.
@@ -180,10 +184,10 @@ jobs:
         if: github.repository == 'ShahimEssaid/fhirware'
         run: |
           echo >> $GITHUB_STEP_SUMMARY
-          echo Building IG with these parameters: '${{ toJSON(inputs) }}' >> $GITHUB_STEP_SUMMARY
+          echo Building IG with these parameters:\n'${{ toJSON(inputs) }}' >> $GITHUB_STEP_SUMMARY
           
       - name: github context is
         if: github.repository == 'ShahimEssaid/fhirware'
         run: |
           echo >> $GITHUB_STEP_SUMMARY
-          echo ${{'\${{github}}'}}: '${{ toJSON(github) }}' >> $GITHUB_STEP_SUMMARY
+          echo ${{'\${{github}}'}}:\n'${{ toJSON(github) }}' >> $GITHUB_STEP_SUMMARY
