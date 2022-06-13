@@ -1,63 +1,51 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {
-		"json.schemas": [
-			{
-				"url": "./fw-schemas/r401/resource.json",
-				"fileMatch": [
-					"/fw-ig/*-r401/input/resources/*.json",
-          "/fw-ig/*-r401/input/*.json",
-					"/fw-examples/**/*-r401.json"
-				]
-			},
-			{
-				"url": "./fw-schemas/r401/example.json",
-				"fileMatch": [
-					"/fw-examples/**/*-r401e.json"
-				]
-			},
-			{
-				"url": "./fw-schemas/5.2022.02.22/resource.json",
-				"fileMatch": [
-					"/fw-ig/*-r5/input/**/*.json",
-					"/fw-examples/**/*-r5.json"
-				]
-			},
-			{
-				"url": "./fw-schemas/5.2022.02.22/example.json",
-				"fileMatch": [
-					"/fw-examples/**/*-r5e.json"
-				]
-			}
-		],
-		"yaml.schemas": {
-			"./fw-schemas/r401/resource.json": [
-				"/fw-ig/*-r401/input/resources/*.yaml",
-				"/fw-examples/**/*-r401.yaml"
-			],
-			"./fw-schemas/5.2022.02.22/resource.json": [
-				"/fw-ig/*-r5/input/**/*.yaml",
-				"/fw-examples/**/*-r5.yaml"
-			]
-		},
-		"json.maxItemsComputed": 50000,
-		"editor.tabSize": 2,
-		"xml.fileAssociations": [
-
-			{
-				"pattern": "fw-ig/*-r401/input/resources/*.xml",
-				"systemId": "fw-schemas/r401/fhir-single.xsd"
-			},
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "json.schemas": [
       {
-				"pattern": "fw-ig/*-r401/input/*.xml",
-				"systemId": "fw-schemas/r401/fhir-single.xsd"
-			},
-		],
+        "url": "./fw-schemas/r401/resource.json",
+        "fileMatch": [
+          "/fw-ig/*-r401/input/resources/*.json",
+          "/fw-ig/*-r401/input/examples/*.json",
+          "/fw-ig/*-r401/input/*.json",
+          "/fw-examples/**/*-r401.json"
+        ]
+      },
+      {
+        "url": "./fw-schemas/r401/example.json",
+        "fileMatch": [
+          "/fw-examples/**/*-r401e.json"
+        ]
+      }
+    ],
+    "yaml.schemas": {
+      "./fw-schemas/r401/resource.json": [
+        "/fw-ig/*-r401/input/resources/*.yaml",
+        "/fw-ig/*-r401/input/examples/*.yaml",
+        "/fw-examples/**/*-r401.yaml"
+      ]
+    },
+    "json.maxItemsComputed": 50000,
+    "editor.tabSize": 2,
+    "xml.fileAssociations": [
+      {
+        "pattern": "fw-ig/*-r401/input/resources/*.xml",
+        "systemId": "fw-schemas/r401/fhir-single.xsd"
+      },
+      {
+        "pattern": "fw-ig/*-r401/input/examples/*.xml",
+        "systemId": "fw-schemas/r401/fhir-single.xsd"
+      },
+      {
+        "pattern": "fw-ig/*-r401/input/*.xml",
+        "systemId": "fw-schemas/r401/fhir-single.xsd"
+      }
+    ],
     "xml.server.vmargs": "-Xmx512m",
-    "editor.detectIndentation": false,
-	}
+    "editor.detectIndentation": false
+  }
 }

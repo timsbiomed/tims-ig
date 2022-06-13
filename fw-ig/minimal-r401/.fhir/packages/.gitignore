@@ -1,3 +1,3 @@
 # Customize to commit packages if needed. Do a local ./build.sh to see what's in this folder and then decide on what to commit in the repo.
-*
+/*
 !.gitignore
