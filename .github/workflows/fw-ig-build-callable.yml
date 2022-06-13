@@ -62,8 +62,10 @@ on:
         required: true
 jobs:
   docker-build:
+    name: Build IG
     runs-on: ubuntu-latest
     steps:
+
       - name: Checkout IG ${{ inputs.owner-repo }}/${{inputs.ig-root}} ref:${{ inputs.ref }}
         uses: actions/checkout@v3
         with:
@@ -173,3 +175,15 @@ jobs:
             git commit -m "IG: ${{ inputs.owner-repo }}, ref: ${{ inputs.ref }}  run_id: ${{ github.run_id }}, run_number: ${{ github.run_number }}, run_attempt: ${{ github.run_attempt }} with branch SHA: ${{steps.branch.outputs.sha}} and merge SHA: ${{steps.merge.outputs.sha}}"
             git push
           fi
+
+      - name: Output configuration to summary
+        if: github.repository == 'ShahimEssaid/fhirware'
+        run: |
+          echo >> $GITHUB_STEP_SUMMARY
+          echo Building IG with these parameters: '${{ toJSON(inputs) }}' >> $GITHUB_STEP_SUMMARY
+          
+      - name: github context is
+        if: github.repository == 'ShahimEssaid/fhirware'
+        run: |
+          echo >> $GITHUB_STEP_SUMMARY
+          echo ${{'\${{github}}'}}: '${{ toJSON(github) }}' >> $GITHUB_STEP_SUMMARY
