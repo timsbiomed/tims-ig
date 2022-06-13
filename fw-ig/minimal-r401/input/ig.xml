@@ -37,6 +37,46 @@
       <code value="path-resource" />
       <value value="input/resources" />
     </parameter>
+    <parameter>
+      <code value="path-resource" />
+      <value value="input/examples" />
+    </parameter>
+    <parameter>
+      <code value="path-resource" />
+      <value value="input/capabilities" />
+    </parameter>
+    <parameter>
+      <code value="path-resource" />
+      <value value="input/extensions" />
+    </parameter>
+    <parameter>
+      <code value="path-resource" />
+      <value value="input/models" />
+    </parameter>
+    <parameter>
+      <code value="path-resource" />
+      <value value="input/operations" />
+    </parameter>
+    <parameter>
+      <code value="path-resource" />
+      <value value="input/profiles" />
+    </parameter>
+    <parameter>
+      <code value="path-resource" />
+      <value value="input/vocabulary" />
+    </parameter>
+    <parameter>
+      <code value="path-resource" />
+      <value value="input/testing" />
+    </parameter>
+    <parameter>
+      <code value="path-resource" />
+      <value value="input/history" />
+    </parameter>
+    <parameter>
+      <code value="path-resource" />
+      <value value="fsh-generated/resources" />
+    </parameter>
 
     <parameter>
       <code value="find-other-resources" />
