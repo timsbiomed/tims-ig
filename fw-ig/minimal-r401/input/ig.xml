@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <ImplementationGuide xmlns="http://hl7.org/fhir">
-  <id value="minimal-r401" />
-  <url value="http://example.com/minimal-r401/ImplementationGuide/minimal-r401" />
+  <id value="minimalr401" />
+  <url value="http://example.com/minimal-r401/ImplementationGuide/minimalr401" />
   <version value="0.0.1" />
-  <name value="MinimalR401IG" />
+  <name value="MinimalR401 on Dev" />
   <status value="draft" />
   <contact>
     <telecom>
@@ -12,7 +12,7 @@
       <value value="http://example.com" />
     </telecom>
   </contact>
-  <packageId value="minimal-r401" />
+  <packageId value="minimalr401" />
   <fhirVersion value="4.0.1" />
   <definition>
 

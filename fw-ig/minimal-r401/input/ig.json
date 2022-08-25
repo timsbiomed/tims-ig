@@ -1,11 +1,11 @@
 {
   "resourceType": "ImplementationGuide",
-  "id": "minimal-r401",
-  "url": "http://example.com/minimal-r401/ImplementationGuide/minimalr4",
+  "id": "minimalr401",
+  "url": "http://example.com/minimal-r401/ImplementationGuide/minimalr401",
   "version": "0.0.1",
-  "name": "Minimalr4",
+  "name": "MinimalR401",
   "status": "draft",
-  "packageId": "minimalr4",
+  "packageId": "minimalr401",
   "fhirVersion": [
     "4.0.1"
   ],

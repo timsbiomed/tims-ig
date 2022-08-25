@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ig-template1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/fw-ig/.starter-r401/.fhir/packages/hl7.fhir.r4.core#4.0.1/package/other/ig-template.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

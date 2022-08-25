@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="full-ig">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/fw-ig/.minimal-r401/temp/pages/full-ig.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
