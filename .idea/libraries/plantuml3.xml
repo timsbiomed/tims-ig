@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="plantuml3">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/fw-ig/.minimal-r401/.fhir/packages/fhir.base.template#current/package/scripts/plantuml.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
