@@ -114,12 +114,13 @@ jobs:
           path: ig-clone
           token: ${{ secrets[inputs.ig-read-secret-name] }}
 
-      - name: Building IG from HEAD ref
+      # We should always have a
+      - name: Building IG from ig-ref
         id: branch
         run: |
           set -x
-          git config --global user.name 'Publisher IO'
-          git config --global user.email 'shahim@essaid.com'
+          git config --global user.name 'GitHub Actions IG build'
+          git config --global user.email 'user@example.com'
           cd ig-clone
           echo "::set-output name=sha::$(git rev-parse HEAD)"
           echo Running IG build with inputs: '${{ toJSON(inputs) }}'
@@ -128,56 +129,8 @@ jobs:
           docker run --rm --volume "${GITHUB_WORKSPACE}/ig-clone/${{inputs.ig-path}}:/ig" "sessaid/ig-publisher:${{inputs.docker-publisher-tag}}"  ${{ inputs.publisher-args }}
           echo $NOW > "${GITHUB_WORKSPACE}/ig-clone/${{inputs.ig-path}}/output/gh-actions-build-timestamp.txt"
 
-      - name: Create IO branch if needed
-        if: inputs.io-repo != ''
-        run: |
-          if git ls-remote --exit-code --heads 'https://${{inputs.io-owner}}:${{secrets[inputs.io-write-secret-name]}}@github.com/${{inputs.io-owner}}/${{inputs.io-repo}}.git' ${{inputs.io-branch}}; then
-            echo IO repo ${{inputs.io-owner}}/${{inputs.io-repo}} and branch ${{inputs.io-branch}} exists
-          else
-            echo repo or branch does not exist, creating branch
-            mkdir io-create-branch
-            cd io-create-branch
-            git init --initial-branch=${{inputs.io-branch}} .
-            echo "Auto created branch" > README.md
-            git add -A
-            git commit -m "Auto created branch for IG IO."
-            git push -f 'https://${{inputs.io-owner}}:${{secrets[inputs.io-write-secret-name]}}@github.com/${{inputs.io-owner}}/${{inputs.io-repo}}.git' ${{inputs.io-branch}}:${{inputs.io-branch}}
-            cd ..
-            rm -rf io-create-branch
-          fi
-
-      # Publish if requested
-      - name: Checking out IO repo
-        if: inputs.io-repo != ''
-        uses: actions/checkout@v3
-        with:
-          repository: ${{ inputs.io-owner }}/${{ inputs.io-repo }}
-          ref: ${{ inputs.io-branch }}
-          path: io-clone
-          token: ${{ secrets[inputs.io-write-secret-name] }}
-
-
-      - name: Publishing IG branch
-        if: inputs.io-repo != ''
-        run: |
-          set -x
-          cd io-clone
-          #git pull origin ${{ inputs.io-branch }}
-          [[ -d "${{ inputs.io-path }}" ]] &&  rm -rf "${{ inputs.io-path }}"
-          mkdir -p "${{ inputs.io-path }}"
-          cp -ra "../ig-clone/${{inputs.ig-path}}/output"/* "${{ inputs.io-path }}"
-          if [[ ! -f  "IG_BUILDS.md" ]]; then
-            echo '# IG Builds  ' > IG_BUILDS.md
-          fi
-          IGLink="[${{ inputs.io-path }}](https://${{ inputs.io-owner }}.github.io/${{ inputs.io-repo }}/${{ inputs.io-path }}/index.html?version=${{steps.branch.outputs.sha}})"
-          {
-            cat IG_BUILDS.md |  grep -v '${{ inputs.io-path }}' ;
-            printf '%s  \n' "$IGLink";
-          } | sort > IG_BUILDS.md.new
-          mv -f IG_BUILDS.md.new IG_BUILDS.md
-          echo "Branch IG build site: $IGLink" >> $GITHUB_STEP_SUMMARY
-
-      - name: Building IG from merge
+      # Do a merge build if pr-base-ref
+      - name: Building IG for merge with pr-base-ref
         id: merge
         if: inputs.pr-base-ref != ''
         # try to merge and build again
@@ -208,41 +161,136 @@ jobs:
           else
             echo "::set-output name=skip-merge::true"
           fi
+          
 
-      - name: Publishing IG merged build
-        if: inputs.pr-base-ref != '' && inputs.io-repo != ''
+      - name: Create IO branch if needed
+        if: inputs.io-repo != ''
+        run: |
+          if git ls-remote --exit-code --heads 'https://${{inputs.io-owner}}:${{secrets[inputs.io-write-secret-name]}}@github.com/${{inputs.io-owner}}/${{inputs.io-repo}}.git' ${{inputs.io-branch}}; then
+            echo IO repo ${{inputs.io-owner}}/${{inputs.io-repo}} and branch ${{inputs.io-branch}} exists
+          else
+            echo repo or branch does not exist, creating branch
+            mkdir io-create-branch
+            cd io-create-branch
+            git init --initial-branch=${{inputs.io-branch}} .
+            echo "Auto created branch" > README.md
+            git add -A
+            git commit -m "Auto created branch for IG IO."
+            git push -f 'https://${{inputs.io-owner}}:${{secrets[inputs.io-write-secret-name]}}@github.com/${{inputs.io-owner}}/${{inputs.io-repo}}.git' ${{inputs.io-branch}}:${{inputs.io-branch}}
+            cd ..
+            rm -rf io-create-branch
+          fi
+     
+
+      # Publish if requested
+      - name: Checking out IO repo
+        if: inputs.io-repo != ''
+        uses: actions/checkout@v3
+        with:
+          repository: ${{ inputs.io-owner }}/${{ inputs.io-repo }}
+          ref: ${{ inputs.io-branch }}
+          path: io-clone
+          token: ${{ secrets[inputs.io-write-secret-name] }}
+
+
+      - name: Publishing IG
+        if: inputs.io-repo != ''
         run: |
           set -x
           cd io-clone
-          [[ -d "${{ inputs.io-path-merged }}" ]] &&  rm -rf "${{ inputs.io-path-merged }}"
-          if [[ ${{ steps.merge.outputs.skip-merge }} == false ]]; then
-            mkdir -p "${{ inputs.io-path-merged }}"
-            cp -ra "../ig-clone/${{inputs.ig-path}}/output"/* "${{ inputs.io-path-merged }}"
-            IGLink="[${{ inputs.io-path-merged }}](https://${{ inputs.io-owner }}.github.io/${{ inputs.io-repo }}/${{ inputs.io-path-merged }}/index.html?version=${{steps.merge.outputs.sha}})"
+          
+          while true; do
+            # Get HEAD reset to latest remote branch in case push failed
+            git fetch origin ${{ inputs.io-branch }}
+            git reset --hard HEAD origin/${{ inputs.io-branch }}
+            git clean -fdx
+          
+            # do the ig-ref copy
+          
+            [[ -d "${{ inputs.io-path }}" ]] &&  rm -rf "${{ inputs.io-path }}"
+            mkdir -p "${{ inputs.io-path }}"
+            cp -ra "../ig-clone/${{inputs.ig-path}}/output"/* "${{ inputs.io-path }}"
+            git add ${{ inputs.io-path }}
+            
+            if [[ ! -f  "IG_BUILDS.md" ]]; then
+              echo '# IG Builds  ' > IG_BUILDS.md
+            fi
+          
+            IGLink="[${{ inputs.io-path }}](https://${{ inputs.io-owner }}.github.io/${{ inputs.io-repo }}/${{ inputs.io-path }}/index.html?version=${{steps.branch.outputs.sha}})"
             {
-              cat IG_BUILDS.md;
+              cat IG_BUILDS.md |  grep -v '${{ inputs.io-path }}' ;
               printf '%s  \n' "$IGLink";
             } | sort > IG_BUILDS.md.new
             mv -f IG_BUILDS.md.new IG_BUILDS.md
-            echo "Merge IG build site: $IGLink" >> $GITHUB_STEP_SUMMARY
-          fi
+            echo "Branch IG build site: $IGLink" >> $GITHUB_STEP_SUMMARY
+          
+            # If there was a merge build
+          
+            [[ -d "${{ inputs.io-path-merged }}" ]] &&  rm -rf "${{ inputs.io-path-merged }}"
+            mkdir -p "${{ inputs.io-path-merged }}"
+            if [[ ${{ steps.merge.outputs.skip-merge }} == false ]]; then
+              cp -ra "../ig-clone/${{inputs.ig-path}}/output"/* "${{ inputs.io-path-merged }}"
+              IGLink="[${{ inputs.io-path-merged }}](https://${{ inputs.io-owner }}.github.io/${{ inputs.io-repo }}/${{ inputs.io-path-merged }}/index.html?version=${{steps.merge.outputs.sha}})"
+              {
+                cat IG_BUILDS.md;
+                printf '%s  \n' "$IGLink";
+              } | sort > IG_BUILDS.md.new
+              mv -f IG_BUILDS.md.new IG_BUILDS.md
+              echo "Merge IG build site: $IGLink" >> $GITHUB_STEP_SUMMARY
+            fi
+          
+            git add ${{ inputs.io-path-merged }}
+            git add IG_BUILDS.md
+          
+            if [[ -z "$(git status --porcelain)" ]]; then
+              echo NO changes
+            else
+              git commit -m "IG: ${{ inputs.ig-owner-repo }}, ref: ${{ inputs.ig-ref }}  run_id: ${{ github.run_id }}, run_number: ${{ github.run_number }}, run_attempt: ${{ github.run_attempt }} with branch SHA: ${{steps.branch.outputs.sha}} and merge SHA: ${{steps.merge.outputs.sha}}"
+              if git push --atomic; then
+                # we were able to push to remote, i.e. remote wasn't updated by another build
+                break
+              fi
+            fi
+            
+          done
+          
 
+ 
 
-
-      - name: Pushing IO repo
-        if: inputs.io-repo != ''
-        run: |
-          #set -x
-          cd io-clone
-          git add IG_BUILDS.md
-          [[ -d "${{ inputs.io-path }}" ]] && git add ${{ inputs.io-path }}
-          [[ -d "${{ inputs.io-path-merged }}" ]] && git add ${{ inputs.io-path-merged }}
-          if [[ -z "$(git status --porcelain)" ]]; then
-            echo NO changes
-          else
-            git commit -m "IG: ${{ inputs.ig-owner-repo }}, ref: ${{ inputs.ig-ref }}  run_id: ${{ github.run_id }}, run_number: ${{ github.run_number }}, run_attempt: ${{ github.run_attempt }} with branch SHA: ${{steps.branch.outputs.sha}} and merge SHA: ${{steps.merge.outputs.sha}}"
-            git push
-          fi
+#      - name: Publishing IG merged build
+#        if: inputs.pr-base-ref != '' && inputs.io-repo != ''
+#        run: |
+#          set -x
+#          cd io-clone
+#          [[ -d "${{ inputs.io-path-merged }}" ]] &&  rm -rf "${{ inputs.io-path-merged }}"
+#          if [[ ${{ steps.merge.outputs.skip-merge }} == false ]]; then
+#            mkdir -p "${{ inputs.io-path-merged }}"
+#            cp -ra "../ig-clone/${{inputs.ig-path}}/output"/* "${{ inputs.io-path-merged }}"
+#            IGLink="[${{ inputs.io-path-merged }}](https://${{ inputs.io-owner }}.github.io/${{ inputs.io-repo }}/${{ inputs.io-path-merged }}/index.html?version=${{steps.merge.outputs.sha}})"
+#            {
+#              cat IG_BUILDS.md;
+#              printf '%s  \n' "$IGLink";
+#            } | sort > IG_BUILDS.md.new
+#            mv -f IG_BUILDS.md.new IG_BUILDS.md
+#            echo "Merge IG build site: $IGLink" >> $GITHUB_STEP_SUMMARY
+#          fi
+#
+#
+#
+#      - name: Pushing IO repo
+#        if: inputs.io-repo != ''
+#        run: |
+#          #set -x
+#          cd io-clone
+#          git add IG_BUILDS.md
+#          [[ -d "${{ inputs.io-path }}" ]] && git add ${{ inputs.io-path }}
+#          [[ -d "${{ inputs.io-path-merged }}" ]] && git add ${{ inputs.io-path-merged }}
+#          if [[ -z "$(git status --porcelain)" ]]; then
+#            echo NO changes
+#          else
+#            git commit -m "IG: ${{ inputs.ig-owner-repo }}, ref: ${{ inputs.ig-ref }}  run_id: ${{ github.run_id }}, run_number: ${{ github.run_number }}, run_attempt: ${{ github.run_attempt }} with branch SHA: ${{steps.branch.outputs.sha}} and merge SHA: ${{steps.merge.outputs.sha}}"
+#            git push
+#          fi
 #
 #      - name: Output configuration to summary
 #        if: github.repository == 'ShahimEssaid/fhirware'
