@@ -206,8 +206,8 @@ jobs:
             git clean -fdx
             
             
-            # race condition
-            sleep 300
+            # race test
+            # sleep 300
             # do the ig-ref copy
           
             [[ -d "${{ inputs.io-path }}" ]] &&  rm -rf "${{ inputs.io-path }}"
