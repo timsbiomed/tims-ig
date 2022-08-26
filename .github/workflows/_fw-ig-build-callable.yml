@@ -128,7 +128,7 @@ jobs:
           #docker pull "sessaid/ig-publisher:${{inputs.docker-publisher-tag}}"
           docker run --rm --volume "${GITHUB_WORKSPACE}/ig-clone/${{inputs.ig-path}}:/ig" "sessaid/ig-publisher:${{inputs.docker-publisher-tag}}"  ${{ inputs.publisher-args }}
           echo $NOW > "${GITHUB_WORKSPACE}/ig-clone/${{inputs.ig-path}}/output/gh-actions-build-timestamp.txt"
-          mv "${GITHUB_WORKSPACE}/ig-clone/${{inputs.ig-path}}/output"  "${GITHUB_WORKSPACE}/ig-clone/${{inputs.ig-path}}/output-ref"
+          mv "${GITHUB_WORKSPACE}/ig-clone/${{inputs.ig-path}}/output"  "${GITHUB_WORKSPACE}/output-ref"
 
       # Do a merge build if pr-base-ref
       - name: Building IG for merge with pr-base-ref
@@ -155,7 +155,7 @@ jobs:
               #mkdir -p "${{inputs.ig-path}}/output"; echo hello merged branch build $(date) > "${{inputs.ig-root}}/output/index.html"
               docker run --rm --volume "${GITHUB_WORKSPACE}/ig-clone/${{inputs.ig-path}}:/ig" "sessaid/ig-publisher:${{inputs.docker-publisher-tag}}"  ${{ inputs.publisher-args }}
               echo $NOW > "${GITHUB_WORKSPACE}/ig-clone/${{inputs.ig-path}}/output/gh-actions-build-timestamp.txt"
-              mv "${GITHUB_WORKSPACE}/ig-clone/${{inputs.ig-path}}/output" "${GITHUB_WORKSPACE}/ig-clone/${{inputs.ig-path}}/output-merge"
+              mv "${GITHUB_WORKSPACE}/ig-clone/${{inputs.ig-path}}/output" "${GITHUB_WORKSPACE}/output-merge"
             else
               echo merge has conflicts
               git merge --abort
@@ -215,7 +215,7 @@ jobs:
           
             [[ -d "${{ inputs.io-path }}" ]] &&  rm -rf "${{ inputs.io-path }}"
             mkdir -p "${{ inputs.io-path }}"
-            cp -ra "../ig-clone/${{inputs.ig-path}}/output-ref"/* "${{ inputs.io-path }}"
+            cp -ra "${GITHUB_WORKSPACE}/output-ref"/* "${{ inputs.io-path }}"
             git add ${{ inputs.io-path }}
             
             if [[ ! -f  "IG_BUILDS.md" ]]; then
@@ -238,7 +238,7 @@ jobs:
             fi
           
             if [[ "${{ steps.merge.outputs.skip-merge }}" == false ]]; then
-              cp -ra "../ig-clone/${{inputs.ig-path}}/output-merge"/* "${{ inputs.io-path-merged }}"
+              cp -ra "${GITHUB_WORKSPACE}/output-merge"/* "${{ inputs.io-path-merged }}"
               IGLink="[${{ inputs.io-path-merged }}](https://${{ inputs.io-owner }}.github.io/${{ inputs.io-repo }}/${{ inputs.io-path-merged }}/index.html?version=${{steps.merge.outputs.sha}})"
               {
                 cat IG_BUILDS.md;
