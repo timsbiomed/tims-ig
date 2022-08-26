@@ -202,7 +202,7 @@ jobs:
           while true; do
             # Get HEAD reset to latest remote branch in case push failed
             git fetch origin ${{ inputs.io-branch }}
-            git reset --hard HEAD origin/${{ inputs.io-branch }}
+            git reset --hard  "origin/${{ inputs.io-branch }}"
             git clean -fdx
           
             # do the ig-ref copy
