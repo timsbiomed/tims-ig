@@ -1,0 +1,25 @@
+﻿TIMS POC IG : Validation Results
+=========================================
+
+err = 4, warn = 4, info = 0
+IG Publisher Version: 1.1.128
+Generated Tue Sep 06 16:14:45 UTC 2022. FHIR version 4.0.1 for tims-poc-ig#0.0.1 (canonical = https://github.com/HOT-Ecosystem/tims-poc-ig)
+ Build Errors : 0 / 0 / 0
+ /ig/fsh-generated/resources/StructureDefinition-fsh-patient : 0 / 1 / 1
+ /ig/input/ig : 0 / 1 / 1
+ /ig/input/resources/StructureDefinition-r4-json-patient : 2 / 1 / 1
+ /ig/input/resources/StructureDefinition-r4-xml.patient : 2 / 1 / 1
+</table>
+== n/a ==
+== fsh-generated/resources/StructureDefinition-fsh-patient.json ==
+WARNING: StructureDefinition.where(url = 'https://github.com/HOT-Ecosystem/tims-poc-ig/StructureDefinition/fsh-patient'): The Implementation Guide contains no examples for this profile
+== input/ig.xml ==
+WARNING: ImplementationGuide/tims-poc-ig: ImplementationGuide: Rule ig-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed
+== input/resources/StructureDefinition-r4-json-patient.json ==
+ERROR: StructureDefinition.where(url = 'http://example.com/minimal-r401/StructureDefinition/r4-json-patient'): Conformance resource /ig/input/resources/StructureDefinition-r4-json-patient.json - the canonical URL (https://github.com/HOT-Ecosystem/tims-poc-ig/StructureDefinition/r4-json-patient) does not match the URL (http://example.com/minimal-r401/StructureDefinition/r4-json-patient)
+WARNING: StructureDefinition.where(url = 'http://example.com/minimal-r401/StructureDefinition/r4-json-patient'): The Implementation Guide contains no examples for this profile
+ERROR: /ig/input/resources/StructureDefinition-r4-json-patient: URL Mismatch https://github.com/HOT-Ecosystem/tims-poc-ig/StructureDefinition/r4-json-patient vs http://example.com/minimal-r401/StructureDefinition/r4-json-patient
+== input/resources/StructureDefinition-r4-xml.patient.xml ==
+ERROR: StructureDefinition.where(url = 'http://example.com/minimal-r401/StructureDefinition/r4-xml.patient'): Conformance resource /ig/input/resources/StructureDefinition-r4-xml.patient.xml - the canonical URL (https://github.com/HOT-Ecosystem/tims-poc-ig/StructureDefinition/r4-xml.patient) does not match the URL (http://example.com/minimal-r401/StructureDefinition/r4-xml.patient)
+WARNING: StructureDefinition.where(url = 'http://example.com/minimal-r401/StructureDefinition/r4-xml.patient'): The Implementation Guide contains no examples for this profile
+ERROR: /ig/input/resources/StructureDefinition-r4-xml.patient: URL Mismatch https://github.com/HOT-Ecosystem/tims-poc-ig/StructureDefinition/r4-xml.patient vs http://example.com/minimal-r401/StructureDefinition/r4-xml.patient
