@@ -1,0 +1,16 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "r4-json-patient",
+  "url": "http://example.com/minimal-r401/StructureDefinition/r4-json-patient",
+  "version": "0.0.1",
+  "name": "R4JsonPatient",
+  "title": "R4 JSON Patient",
+  "status": "draft",
+  "description": "A R4 JSON Patient profile",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Patient",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Patient",
+  "derivation": "constraint"
+}
