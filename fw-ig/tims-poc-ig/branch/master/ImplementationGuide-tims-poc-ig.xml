@@ -9,7 +9,7 @@
   <version value="0.0.1"/>
   <name value="TIMS POC IG"/>
   <status value="draft"/>
-  <date value="2022-09-06T15:50:12+00:00"/>
+  <date value="2022-09-06T16:07:02+00:00"/>
   <contact>
     <telecom>
       <system value="url"/>
@@ -253,7 +253,7 @@
       <generation value="html"/>
       <page>
         <nameUrl value="index.html"/>
-        <title value="Minimal R401 IG"/>
+        <title value="TIMS POC IG"/>
         <generation value="html"/>
       </page>
     </page>

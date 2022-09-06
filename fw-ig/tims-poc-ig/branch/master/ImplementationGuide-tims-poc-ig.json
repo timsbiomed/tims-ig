@@ -9,7 +9,7 @@
   "version": "0.0.1",
   "name": "TIMS POC IG",
   "status": "draft",
-  "date": "2022-09-06T15:50:12+00:00",
+  "date": "2022-09-06T16:07:02+00:00",
   "contact": [
     {
       "telecom": [
@@ -396,7 +396,7 @@
       "page": [
         {
           "nameUrl": "index.html",
-          "title": "Minimal R401 IG",
+          "title": "TIMS POC IG",
           "generation": "html"
         }
       ]
