@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <ImplementationGuide xmlns="http://hl7.org/fhir">
-  <id value="minimalr401" />
-  <url value="http://example.com/minimal-r401/ImplementationGuide/minimalr401" />
+  <id value="tims-poc-ig" />
+  <url value="https://github.com/HOT-Ecosystem/tims-poc-ig/ImplementationGuide/tims-poc-ig" />
   <version value="0.0.1" />
-  <name value="MinimalR401 on Dev 8.25 edit 6" />
+  <name value="TIMS POC IG" />
   <status value="draft" />
   <contact>
     <telecom>
@@ -12,7 +12,7 @@
       <value value="http://example.com" />
     </telecom>
   </contact>
-  <packageId value="minimalr401" />
+  <packageId value="tims-poc-ig" />
   <fhirVersion value="4.0.1" />
   <definition>
 

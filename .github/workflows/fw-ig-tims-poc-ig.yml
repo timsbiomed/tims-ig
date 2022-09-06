@@ -1,4 +1,4 @@
-name: minimal-r401-ig-wf
+name: tims-poc-ig
 
 # Setup:
 # 1. Copy this file and name it to match the IG folder name to help relate the file to the IG. The file name it not
@@ -9,7 +9,7 @@ name: minimal-r401-ig-wf
 # 5. Enable GitHub actions and write access to this repository.
 # 6.
 env:
-  IG_PATH: 'fw-ig/minimal-r401'  # The relative folder path of the IG root directory
+  IG_PATH: 'fw-ig/tims-poc-ig'  # The relative folder path of the IG root directory
   IG_READ_SECRET_NAME: GITHUB_TOKEN
   IG_WRITE_SECRET_NAME: GITHUB_TOKEN
 
@@ -36,15 +36,15 @@ on:
   push:
     branches: [ main, master, dev ]
     paths:
-      - 'fw-ig/minimal-r401/**'
-      - '.github/workflows/fw-ig-minimal-r401.yml'
+      - 'fw-ig/tims-poc-ig/**'
+      - '.github/workflows/fw-tims-poc-ig.yml'
       - '.github/workflows/_fw-ig-build-callable.yml'
       - '!**/README*'
 
   pull_request_target:
     paths:
-      - 'fw-ig/minimal-r401/**'
-      - '.github/workflows/fw-ig-minimal-r401.yml'
+      - 'fw-ig/tims-poc-ig/**'
+      - '.github/workflows/fw-ig-tims-poc-ig.yml'
       - '.github/workflows/_fw-ig-build-callable.yml'
       - '!**/README*'
 
