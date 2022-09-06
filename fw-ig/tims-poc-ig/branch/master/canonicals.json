@@ -1,0 +1,30 @@
+[
+  {
+    "id": "r4-json-patient",
+    "type": "StructureDefinition",
+    "url": "http://example.com/minimal-r401/StructureDefinition/r4-json-patient",
+    "version": "0.0.1",
+    "name": "R4JsonPatient"
+  },
+  {
+    "id": "r4-xml.patient",
+    "type": "StructureDefinition",
+    "url": "http://example.com/minimal-r401/StructureDefinition/r4-xml.patient",
+    "version": "0.0.1",
+    "name": "R4XmlPatient"
+  },
+  {
+    "id": "tims-poc-ig",
+    "type": "ImplementationGuide",
+    "url": "https://github.com/HOT-Ecosystem/tims-poc-ig/ImplementationGuide/tims-poc-ig",
+    "version": "0.0.1",
+    "name": "TIMS POC IG"
+  },
+  {
+    "id": "fsh-patient",
+    "type": "StructureDefinition",
+    "url": "https://github.com/HOT-Ecosystem/tims-poc-ig/StructureDefinition/fsh-patient",
+    "version": "0.0.1",
+    "name": "FshPatient"
+  }
+]
