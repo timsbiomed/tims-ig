@@ -1,1 +1,0 @@
-A minimal IG setup with examples of FSH, JSON, and XML.

@@ -9,7 +9,7 @@ name: tims-poc-ig-r401
 # 5. Enable GitHub actions and write access to this repository.
 # 6.
 env:
-  IG_PATH: 'fw-ig/tims-poc-ig-r401'  # The relative folder path of the IG root directory
+  IG_PATH: 'tims-ig'  # The relative folder path of the IG root directory
   IG_READ_SECRET_NAME: GITHUB_TOKEN
   IG_WRITE_SECRET_NAME: GITHUB_TOKEN
 
@@ -36,15 +36,15 @@ on:
   push:
     branches: [ main, master, dev ]
     paths:
-      - 'fw-ig/tims-poc-ig-r401/**'
-      - '.github/workflows/fw-ig-tims-poc-ig-r401.yml'
+      - 'tims-ig/**'
+      - '.github/workflows/tims-ig.yml'
       - '.github/workflows/_fw-ig-build-callable.yml'
       - '!**/README*'
 
   pull_request_target:
     paths:
-      - 'fw-ig/tims-poc-ig-r401/**'
-      - '.github/workflows/fw-ig-tims-poc-ig-r401.yml'
+      - 'tims-ig/**'
+      - '.github/workflows/tims-ig.yml'
       - '.github/workflows/_fw-ig-build-callable.yml'
       - '!**/README*'
 
