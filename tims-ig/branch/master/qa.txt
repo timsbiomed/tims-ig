@@ -1,0 +1,33 @@
+﻿TIMS POC IG : Validation Results
+=========================================
+
+err = 5, warn = 9, info = 0
+IG Publisher Version: 1.3.4
+Generated Mon Apr 10 19:40:45 UTC 2023. FHIR version 4.0.1 for tims-poc-ig#0.0.1 (canonical = https://github.com/HOT-Ecosystem/tims-poc-ig)
+ Build Errors : 1 / 5 / 0
+ /ig/fsh-generated/resources/StructureDefinition-fsh-patient : 0 / 1 / 1
+ /ig/input/examples/patient-ex1 : 0 / 0 / 1
+ /ig/input/ig : 0 / 1 / 1
+ /ig/input/resources/StructureDefinition-r4-json-patient : 2 / 1 / 1
+ /ig/input/resources/StructureDefinition-r4-xml.patient : 2 / 1 / 1
+</table>
+== n/a ==
+ERROR: Unable to find ImplementationGuide.definition.resource.name for the resource Patient/ex1.  Name is mandatory if it cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Patient/ex1.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: 1: The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide
+WARNING: 2: An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide
+WARNING: 3: An HTML fragment from the set [dependency-table.xhtml, dependency-table-short.xhtml] is not included anywhere in the produced implementation guide
+WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
+== fsh-generated/resources/StructureDefinition-fsh-patient.json ==
+WARNING: StructureDefinition.where(url = 'https://github.com/HOT-Ecosystem/tims-poc-ig/StructureDefinition/fsh-patient'): The Implementation Guide contains no examples for this profile
+== input/examples/patient-ex1.json ==
+== input/ig.xml ==
+WARNING: ImplementationGuide/tims-poc-ig: ImplementationGuide: Rule ig-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed
+== input/resources/StructureDefinition-r4-json-patient.json ==
+ERROR: StructureDefinition.where(url = 'http://example.com/minimal-r401/StructureDefinition/r4-json-patient'): Conformance resource /ig/input/resources/StructureDefinition-r4-json-patient.json - the canonical URL (https://github.com/HOT-Ecosystem/tims-poc-ig/StructureDefinition/r4-json-patient) does not match the URL (http://example.com/minimal-r401/StructureDefinition/r4-json-patient)
+WARNING: StructureDefinition.where(url = 'http://example.com/minimal-r401/StructureDefinition/r4-json-patient'): The Implementation Guide contains no examples for this profile
+ERROR: /ig/input/resources/StructureDefinition-r4-json-patient: URL Mismatch https://github.com/HOT-Ecosystem/tims-poc-ig/StructureDefinition/r4-json-patient vs http://example.com/minimal-r401/StructureDefinition/r4-json-patient
+== input/resources/StructureDefinition-r4-xml.patient.xml ==
+ERROR: StructureDefinition.where(url = 'http://example.com/minimal-r401/StructureDefinition/r4-xml.patient'): Conformance resource /ig/input/resources/StructureDefinition-r4-xml.patient.xml - the canonical URL (https://github.com/HOT-Ecosystem/tims-poc-ig/StructureDefinition/r4-xml.patient) does not match the URL (http://example.com/minimal-r401/StructureDefinition/r4-xml.patient)
+WARNING: StructureDefinition.where(url = 'http://example.com/minimal-r401/StructureDefinition/r4-xml.patient'): The Implementation Guide contains no examples for this profile
+ERROR: /ig/input/resources/StructureDefinition-r4-xml.patient: URL Mismatch https://github.com/HOT-Ecosystem/tims-poc-ig/StructureDefinition/r4-xml.patient vs http://example.com/minimal-r401/StructureDefinition/r4-xml.patient
