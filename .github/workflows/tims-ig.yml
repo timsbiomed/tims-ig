@@ -165,7 +165,7 @@ jobs:
 
   build:
     needs: setup
-    uses: ./.github/workflows/_fw-ig-build-callable.yml
+    uses: ShahimEssaid/gh-workflows/.github/workflows/fhir-ig-build.yml@dev
     secrets: inherit
 
     with:

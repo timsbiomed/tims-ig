@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/fhirware-wt-dev.iml" filepath="$PROJECT_DIR$/.idea/fhirware-wt-dev.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/tims-ig.iml" filepath="$PROJECT_DIR$/.idea/tims-ig.iml" />
     </modules>
   </component>
 </project>

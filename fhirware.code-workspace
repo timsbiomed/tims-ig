@@ -7,28 +7,15 @@
   "settings": {
     "json.schemas": [
       {
-        "url": "./fw-schemas/r401/resource.json",
+        "url": ".schema/r4-schema.json",
         "fileMatch": [
-          "/fw-ig/*-r401/input/resources/*.json",
-          "/fw-ig/*-r401/input/examples/*.json",
-          "/fw-ig/*-r401/input/*.json",
-          "/fw-examples/**/*-r401.json"
-        ]
-      },
-      {
-        "url": "./fw-schemas/r401/example.json",
-        "fileMatch": [
-          "/fw-examples/**/*-r401e.json"
+          "/tims-ig/input/resources/*.json",
+          "/tims-ig/input/examples/*.json",
+          "/tims-ig/input/*.json"
         ]
       }
     ],
-    "yaml.schemas": {
-      "./fw-schemas/r401/resource.json": [
-        "/fw-ig/*-r401/input/resources/*.yaml",
-        "/fw-ig/*-r401/input/examples/*.yaml",
-        "/fw-examples/**/*-r401.yaml"
-      ]
-    },
+    
     "json.maxItemsComputed": 50000,
     "editor.tabSize": 2,
     "xml.fileAssociations": [
