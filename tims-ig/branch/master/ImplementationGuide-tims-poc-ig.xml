@@ -9,7 +9,7 @@
   <version value="0.0.1"/>
   <name value="TIMS POC IG"/>
   <status value="draft"/>
-  <date value="2023-04-10T19:40:27+00:00"/>
+  <date value="2023-04-11T21:30:03+00:00"/>
   <contact>
     <telecom>
       <system value="url"/>
@@ -465,6 +465,14 @@
       </reference>
       <name value="Fsh Patient"/>
       <description value="A patient that is a type of fsh."/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="OperationDefinition"/>
+      </extension>
+      <reference>
+        <reference value="OperationDefinition/TextSearch"/>
+      </reference>
     </resource>
     <page>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">

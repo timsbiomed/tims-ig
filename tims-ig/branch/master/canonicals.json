@@ -21,6 +21,13 @@
     "name" : "TIMS POC IG"
   },
   {
+    "id" : "TextSearch",
+    "type" : "OperationDefinition",
+    "url" : "https://github.com/HOT-Ecosystem/tims-poc-ig/OperationDefinition/TextSearch",
+    "version" : "0.0.1",
+    "name" : "TextSearch"
+  },
+  {
     "id" : "fsh-patient",
     "type" : "StructureDefinition",
     "url" : "https://github.com/HOT-Ecosystem/tims-poc-ig/StructureDefinition/fsh-patient",

@@ -16,7 +16,7 @@
   fhir:version [ fhir:v "0.0.1"] ; # 
   fhir:name [ fhir:v "TIMS POC IG"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-04-10T19:40:27+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-04-11T21:30:03+00:00"^^xsd:dateTime] ; # 
   fhir:contact ( [
      fhir:telecom ( [
        fhir:system [ fhir:v "url" ] ;
@@ -533,6 +533,15 @@
        ] ;
        fhir:name [ fhir:v "Fsh Patient" ] ;
        fhir:description [ fhir:v "A patient that is a type of fsh." ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "OperationDefinition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://github.com/HOT-Ecosystem/tims-poc-ig/OperationDefinition/TextSearch> ;
+         fhir:reference [ fhir:v "OperationDefinition/TextSearch" ]
+       ]
      ] ) ;
      fhir:page [
        fhir:extension ( [

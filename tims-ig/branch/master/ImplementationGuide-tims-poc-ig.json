@@ -9,7 +9,7 @@
   "version" : "0.0.1",
   "name" : "TIMS POC IG",
   "status" : "draft",
-  "date" : "2023-04-10T19:40:27+00:00",
+  "date" : "2023-04-11T21:30:03+00:00",
   "contact" : [{
     "telecom" : [{
       "system" : "url",
@@ -621,6 +621,15 @@
       },
       "name" : "Fsh Patient",
       "description" : "A patient that is a type of fsh."
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "OperationDefinition"
+      }],
+      "reference" : {
+        "reference" : "OperationDefinition/TextSearch"
+      }
     }],
     "page" : {
       "extension" : [{

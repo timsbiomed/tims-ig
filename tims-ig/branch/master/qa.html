@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<!-- broken links = 0, errors = 5, warn = 9, info = 0-->
+<!-- broken links = 0, errors = 6, warn = 10, info = 0-->
 <head>
   <title>TIMS POC IG : Validation Results</title>
   <link href="fhir.css" rel="stylesheet"/>
@@ -36,12 +36,12 @@
 </head>
 <body style="margin: 20px; background-color: #ffffff">
  <h1>Validation Results for TIMS POC IG</h1>
- <p>Generated Mon Apr 10 19:40:45 UTC 2023, FHIR version 4.0.1 for tims-poc-ig#0.0.1 (canonical = <a href="https://github.com/HOT-Ecosystem/tims-poc-ig">https://github.com/HOT-Ecosystem/tims-poc-ig</a> (<a href="https://github.com/HOT-Ecosystem/tims-poc-ig/history.html">history</a>)). See <a href="qa.min.html">Errors Only</a></p>
+ <p>Generated Tue Apr 11 21:30:20 UTC 2023, FHIR version 4.0.1 for tims-poc-ig#0.0.1 (canonical = <a href="https://github.com/HOT-Ecosystem/tims-poc-ig">https://github.com/HOT-Ecosystem/tims-poc-ig</a> (<a href="https://github.com/HOT-Ecosystem/tims-poc-ig/history.html">history</a>)). See <a href="qa.min.html">Errors Only</a></p>
 <table class="grid"> <tr><td colspan=2><b>Quality Checks</b></td></tr>
  <tr><td>Publisher Version:</td><td><span>IG Publisher Version: v1.3.4</span></td></tr>
  <tr><td>Publication Code:</td><td>n/a<span style="color: maroon; font-weight: bold"> </span>. PackageId = tims-poc-ig, Canonical = https://github.com/HOT-Ecosystem/tims-poc-ig</td></tr>
  <tr><td>Realm Check for n/a:</td><td><span style="color: maroon; font-weight: bold"></span><ul><li>n/a</li></ul></td></tr>
- <tr><td>Publication Request:</td><td><ul><li><span title="Invalid HTTP response 404 from https://github.com/HOT-Ecosystem/tims-poc-ig/package-list.json?nocache=1681155645709 (Not Found) (content in /tmp/fhir-http-3.log)">This IG has never been published</span> <img src="information.png" height="16px" width="16px"/></li>
+ <tr><td>Publication Request:</td><td><ul><li><span title="Invalid HTTP response 404 from https://github.com/HOT-Ecosystem/tims-poc-ig/package-list.json?nocache=1681248620097 (Not Found) (content in /tmp/fhir-http-3.log)">This IG has never been published</span> <img src="information.png" height="16px" width="16px"/></li>
 <li>This IG has never been published, so the version should start with '0.' or include a patch version e.g. '-ballot' <img src="icon-warning.png" height="16px" width="16px"/></li>
 <li>No publication request found <img src="information.png" height="16px" width="16px"/></li>
 </ul>
@@ -56,16 +56,19 @@
  <tr><td>HTA Analysis:</td><td><i>Non-HL7 Igs are exempt from terminology dependency analysis</i></td></tr>
  <tr><td>R5 Dependencies:</td><td><span style="color: grey">(none)</span></td></tr>
  <tr><td>Modifier Extensions:</td><td><span style="color: grey">(none)</span></td></tr>
- <tr><td>Previous Version Comparison:</td><td> Unable to compare with previous version: Unable to find version history at https://github.com/HOT-Ecosystem/tims-poc-ig (Problem #1 with package-list.json at https://github.com/HOT-Ecosystem/tims-poc-ig: Invalid HTTP response 404 from https://github.com/HOT-Ecosystem/tims-poc-ig/package-list.json?nocache=1681155626970 (Not Found) (content in /tmp/fhir-http-2.log))</td></tr>
+ <tr><td>Previous Version Comparison:</td><td> Unable to compare with previous version: Unable to find version history at https://github.com/HOT-Ecosystem/tims-poc-ig (Problem #1 with package-list.json at https://github.com/HOT-Ecosystem/tims-poc-ig: Invalid HTTP response 404 from https://github.com/HOT-Ecosystem/tims-poc-ig/package-list.json?nocache=1681248603447 (Not Found) (content in /tmp/fhir-http-2.log))</td></tr>
  <tr><td>IPA Comparison:</td><td> n/a</td></tr>
- <tr><td>Summary:</td><td> errors = 5, warn = 9, info = 0, broken links = 0</td></tr>
+ <tr><td>Summary:</td><td> errors = 6, warn = 10, info = 0, broken links = 0</td></tr>
 </table>
  <table class="grid">
    <tr>
      <td><b>Filename</b></td><td><b>Errors</b></td><td><b>Warnings</b></td><td><b>Hints</b></td>
    </tr>
    <tr style="background-color: #ffcccc">
-     <td><a href="#internal"><b>Build Errors</b></a></td><td><b>1</b></td><td><b>5</b></td><td><b>0</b></td>
+     <td><a href="#internal"><b>Build Errors</b></a></td><td><b>2</b></td><td><b>6</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#_ig_fsh-generated_resources_OperationDefinition-TextSearch"><b>/ig/fsh-generated/resources/OperationDefinition-TextSearch</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>0</b></td>
    </tr>
    <tr style="background-color: #EFFFEF">
      <td><a href="#_ig_fsh-generated_resources_StructureDefinition-fsh-patient"><b>/ig/fsh-generated/resources/StructureDefinition-fsh-patient</b></a></td><td><b>0</b></td><td><b>1</b></td><td><b>0</b></td>
@@ -94,6 +97,12 @@
    <tr style="background-color: #ffebcc">
      <td><b></b></td><td><b>warning</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.description for the resource Patient/ex1.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
    </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b></b></td><td><b>error</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.name for the resource OperationDefinition/TextSearch.  Name is mandatory if it cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b></b></td><td><b>warning</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.description for the resource OperationDefinition/TextSearch.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
+   </tr>
    <tr style="background-color: #ffebcc">
      <td><b>1</b></td><td><b>warning</b></td><td title=""><b>The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide</b></td>
    </tr>
@@ -108,9 +117,19 @@
    </tr>
 </table>
 <hr/>
+<a name="_ig_fsh-generated_resources_OperationDefinition-TextSearch"> </a>
+<h2><a href="OperationDefinition-TextSearch.html">fsh-generated/resources/OperationDefinition-TextSearch.json</a> <span id="svi1" class="toggle" onclick="toggle('vi1')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi1')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi1"><ul style="font-size: 7px"><li>OperationDefinition: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/operationdefinition.html">OperationDefinition</a></li></ul>
+</div>
+ <table class="grid">
+   <tr>
+     <td>&check;</td>
+   </tr>
+</table>
+<hr/>
 <a name="_ig_fsh-generated_resources_StructureDefinition-fsh-patient"> </a>
-<h2><a href="StructureDefinition-fsh-patient.html">fsh-generated/resources/StructureDefinition-fsh-patient.json</a> <span id="svi1" class="toggle" onclick="toggle('vi1')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi1')">(1)</span></h2>
- <div style="border: 1px grey solid; display: none" id="vi1"><ul style="font-size: 7px"><li>StructureDefinition: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></li></ul>
+<h2><a href="StructureDefinition-fsh-patient.html">fsh-generated/resources/StructureDefinition-fsh-patient.json</a> <span id="svi2" class="toggle" onclick="toggle('vi2')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi2')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi2"><ul style="font-size: 7px"><li>StructureDefinition: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></li></ul>
 </div>
  <table class="grid">
    <tr>
@@ -122,8 +141,8 @@
 </table>
 <hr/>
 <a name="_ig_input_examples_patient-ex1"> </a>
-<h2><a href="Patient-ex1.html">input/examples/patient-ex1.json</a> <span id="svi2" class="toggle" onclick="toggle('vi2')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi2')">(1)</span></h2>
- <div style="border: 1px grey solid; display: none" id="vi2"><ul style="font-size: 7px"><li>Patient: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/patient.html">Patient</a></li></ul>
+<h2><a href="Patient-ex1.html">input/examples/patient-ex1.json</a> <span id="svi3" class="toggle" onclick="toggle('vi3')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi3')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi3"><ul style="font-size: 7px"><li>Patient: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/patient.html">Patient</a></li></ul>
 </div>
  <table class="grid">
    <tr>
@@ -132,20 +151,20 @@
 </table>
 <hr/>
 <a name="_ig_input_ig"> </a>
-<h2><a href="ImplementationGuide-tims-poc-ig.html">input/ig.xml</a> <span id="svi3" class="toggle" onclick="toggle('vi3')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi3')">(0)</span></h2>
- <div style="border: 1px grey solid; display: none" id="vi3"></div>
+<h2><a href="ImplementationGuide-tims-poc-ig.html">input/ig.xml</a> <span id="svi4" class="toggle" onclick="toggle('vi4')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi4')">(0)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi4"></div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
    </tr>
    <tr style="background-color: #ffebcc">
-     <td><b>ImplementationGuide (l1/c11665)</b></td><td><b>warning</b></td><td title="Rule ig-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed"><b>Rule ig-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed</b></td>
+     <td><b>ImplementationGuide (l1/c11853)</b></td><td><b>warning</b></td><td title="Rule ig-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed"><b>Rule ig-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed</b></td>
    </tr>
 </table>
 <hr/>
 <a name="_ig_input_resources_StructureDefinition-r4-json-patient"> </a>
-<h2><a href="StructureDefinition-r4-json-patient.html">input/resources/StructureDefinition-r4-json-patient.json</a> <span id="svi4" class="toggle" onclick="toggle('vi4')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi4')">(1)</span></h2>
- <div style="border: 1px grey solid; display: none" id="vi4"><ul style="font-size: 7px"><li>StructureDefinition: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></li></ul>
+<h2><a href="StructureDefinition-r4-json-patient.html">input/resources/StructureDefinition-r4-json-patient.json</a> <span id="svi5" class="toggle" onclick="toggle('vi5')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi5')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi5"><ul style="font-size: 7px"><li>StructureDefinition: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></li></ul>
 </div>
  <table class="grid">
    <tr>
@@ -163,8 +182,8 @@
 </table>
 <hr/>
 <a name="_ig_input_resources_StructureDefinition-r4-xml.patient"> </a>
-<h2><a href="StructureDefinition-r4-xml.patient.html">input/resources/StructureDefinition-r4-xml.patient.xml</a> <span id="svi5" class="toggle" onclick="toggle('vi5')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi5')">(1)</span></h2>
- <div style="border: 1px grey solid; display: none" id="vi5"><ul style="font-size: 7px"><li>StructureDefinition: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></li></ul>
+<h2><a href="StructureDefinition-r4-xml.patient.html">input/resources/StructureDefinition-r4-xml.patient.xml</a> <span id="svi6" class="toggle" onclick="toggle('vi6')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi6')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi6"><ul style="font-size: 7px"><li>StructureDefinition: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/structuredefinition.html">StructureDefinition</a></li></ul>
 </div>
  <table class="grid">
    <tr>
