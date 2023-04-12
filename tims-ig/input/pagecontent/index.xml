@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../input-cache/schemas/R4/fhir-xhtml.xsd">
-<h3>TIMS IG</h3>
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../input-cache/schemas/R4/fhir-xhtml.xsd">
+
+  <a name="intro"/>
+  <h3>TIMS IG</h3>
+  <p>This IG documents efforts to extend the base FHIR Terminology Services specification, and provide additional
+    information related to TIMS efforts in this area.
+  </p>
 </div>

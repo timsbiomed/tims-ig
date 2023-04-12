@@ -1,9 +1,10 @@
-Instance: TextSearch
+Instance: text-search
 InstanceOf: http://hl7.org/fhir/StructureDefinition/OperationDefinition
 Title: "Text search operation"
-Description: "Text search Description"
+Description: "Text search description"
 Usage: #definition
-* name = "TextSearch"
+* name = "Text search name"
+* title = "Text search operation"
 * status = #draft
 * kind = #operation
 * code = #text-search

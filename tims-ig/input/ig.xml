@@ -1,98 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <ImplementationGuide xmlns="http://hl7.org/fhir">
-  <id value="tims-poc-ig" />
-  <url value="https://github.com/HOT-Ecosystem/tims-poc-ig/ImplementationGuide/tims-poc-ig" />
-  <version value="0.0.1" />
-  <name value="TIMS POC IG" />
-  <status value="draft" />
+  <id value="tims-ig"/>
+  <url value="https://github.com/HOT-Ecosystem/tims-ig/ImplementationGuide/tims-ig"/>
+  <version value="0.0.1"/>
+  <name value="TIMS IG"/>
+  <status value="draft"/>
   <contact>
     <telecom>
-      <system value="url" />
-      <value value="http://example.com" />
+      <system value="url"/>
+      <value value="http://example.com"/>
     </telecom>
   </contact>
-  <packageId value="tims-poc-ig" />
-  <fhirVersion value="4.0.1" />
+  <packageId value="tims-ig"/>
+  <fhirVersion value="4.0.1"/>
   <definition>
 
-    <resource>
-      <reference>
-        <reference value="StructureDefinition/r4-xml.patient" />
-      </reference>
-    </resource>
+<!--    <resource>-->
+<!--      <reference>-->
+<!--        <reference value="OperationDefinition/text-search"/>-->
+<!--      </reference>-->
+<!--    </resource>-->
 
     <page>
-      <nameUrl value="toc.html" />
-      <title value="Table of Contents" />
-      <generation value="html" />
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
       <page>
-        <nameUrl value="index.html" />
-        <title value="TIMS POC IG" />
-        <generation value="html" />
+        <nameUrl value="index.html"/>
+        <title value="TIMS IG"/>
+        <generation value="html"/>
       </page>
     </page>
 
     <parameter>
-      <code value="path-resource" />
-      <value value="input/resources" />
+      <code value="path-resource"/>
+      <value value="input/resources"/>
     </parameter>
     <parameter>
-      <code value="path-resource" />
-      <value value="input/examples" />
+      <code value="path-resource"/>
+      <value value="input/examples"/>
     </parameter>
     <parameter>
-      <code value="path-resource" />
-      <value value="input/capabilities" />
+      <code value="path-resource"/>
+      <value value="input/capabilities"/>
     </parameter>
     <parameter>
-      <code value="path-resource" />
-      <value value="input/extensions" />
+      <code value="path-resource"/>
+      <value value="input/extensions"/>
     </parameter>
     <parameter>
-      <code value="path-resource" />
-      <value value="input/models" />
+      <code value="path-resource"/>
+      <value value="input/models"/>
     </parameter>
     <parameter>
-      <code value="path-resource" />
-      <value value="input/operations" />
+      <code value="path-resource"/>
+      <value value="input/operations"/>
     </parameter>
     <parameter>
-      <code value="path-resource" />
-      <value value="input/profiles" />
+      <code value="path-resource"/>
+      <value value="input/profiles"/>
     </parameter>
     <parameter>
-      <code value="path-resource" />
-      <value value="input/vocabulary" />
+      <code value="path-resource"/>
+      <value value="input/vocabulary"/>
     </parameter>
     <parameter>
-      <code value="path-resource" />
-      <value value="input/testing" />
+      <code value="path-resource"/>
+      <value value="input/testing"/>
     </parameter>
     <parameter>
-      <code value="path-resource" />
-      <value value="input/history" />
+      <code value="path-resource"/>
+      <value value="input/history"/>
     </parameter>
     <parameter>
-      <code value="path-resource" />
-      <value value="fsh-generated/resources" />
+      <code value="path-resource"/>
+      <value value="fsh-generated/resources"/>
     </parameter>
 
     <parameter>
-      <code value="find-other-resources" />
-      <value value="true" />
+      <code value="find-other-resources"/>
+      <value value="true"/>
     </parameter>
     <parameter>
-      <code value="releaselabel" />
-      <value value="Demo build" />
+      <code value="releaselabel"/>
+      <value value="Demo build"/>
     </parameter>
     <parameter>
-      <code value="copyrightyear" />
-      <value value="2022+" />
+      <code value="copyrightyear"/>
+      <value value="2022+"/>
     </parameter>
     <parameter>
-      <code value="shownav" />
-      <value value="true" />
+      <code value="shownav"/>
+      <value value="true"/>
     </parameter>
 
 
