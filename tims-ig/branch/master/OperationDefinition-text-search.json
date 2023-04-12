@@ -1,16 +1,17 @@
 {
   "resourceType" : "OperationDefinition",
-  "id" : "TextSearch",
+  "id" : "text-search",
   "text" : {
     "status" : "extensions",
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>URL: [base]/CodeSystem/$text-search</p><p>URL: [base]/CodeSystem/[id]/$text-search</p><p>Parameters</p><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Scope</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>text</td><td/><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#string\">string</a></td><td/><td><div><p>The text to search for.</p>\n</div></td></tr></table></div>"
   },
-  "url" : "https://github.com/HOT-Ecosystem/tims-poc-ig/OperationDefinition/TextSearch",
+  "url" : "https://github.com/HOT-Ecosystem/tims-ig/OperationDefinition/text-search",
   "version" : "0.0.1",
-  "name" : "TextSearch",
+  "name" : "Text search name",
+  "title" : "Text search operation",
   "status" : "draft",
   "kind" : "operation",
-  "date" : "2023-04-11T21:30:03+00:00",
+  "date" : "2023-04-12T17:43:52+00:00",
   "contact" : [{
     "telecom" : [{
       "system" : "url",

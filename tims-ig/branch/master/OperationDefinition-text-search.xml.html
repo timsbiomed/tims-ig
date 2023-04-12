@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>TIMS-POC-IG\null - XML Representation - FHIR v4.0.1</title>
+    <title>TIMS-IG\Text search operation - XML Representation - FHIR v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -76,7 +76,7 @@
             <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
             <div class="nav-collapse collapse navbar-inverse-collapse">
               <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
-  <li><a href="index.html">IG Home</a></li>
+  <li><a href="index.html">Home</a></li>
   <li><a href="toc.html">Table of Contents</a></li>
 
 </ul>      
@@ -92,15 +92,15 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b></b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Text search operation</b></li>
 
           <span style="float:right;">
 
-            <a href="OperationDefinition-TextSearch-testing.html">&lt;prev</a> | 
+            <a href="OperationDefinition-text-search-testing.html">&lt;prev</a> | 
 
             <a href="#bottom">bottom</a>
 
-          | <a href="OperationDefinition-TextSearch.json.html">next&gt;</a>
+          | <a href="OperationDefinition-text-search.json.html">next&gt;</a>
 
           </span>
 
@@ -115,7 +115,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 7" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">TIMS POC IG - Local Development build (v0.0.1). See the <a href="https://github.com/HOT-Ecosystem/tims-poc-ig/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">TIMS IG - Local Development build (v0.0.1). See the <a href="https://github.com/HOT-Ecosystem/tims-ig/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -128,7 +128,7 @@
 <ul class="nav nav-tabs">
 
   <li>
-    <a href="OperationDefinition-TextSearch.html">Narrative Content</a>
+    <a href="OperationDefinition-text-search.html">Narrative Content</a>
   </li>
 
 
@@ -142,14 +142,14 @@
 
   
     <li>
-      <a href="OperationDefinition-TextSearch.json.html">JSON</a>
+      <a href="OperationDefinition-text-search.json.html">JSON</a>
     </li>
   
 
 
   
     <li>
-      <a href="OperationDefinition-TextSearch.ttl.html">TTL</a>
+      <a href="OperationDefinition-text-search.ttl.html">TTL</a>
     </li>
   
 
@@ -161,7 +161,7 @@
 <a name="root"> </a>
 
 
-<h2 id="root">: null - XML Representation</h2>
+<h2 id="root">: Text search operation - XML Representation</h2>
   <table class="colsd">
     <tr>
 
@@ -169,7 +169,7 @@
         
           Draft
           
-            as of 2023-04-11
+            as of 2023-04-12
           
         
       </td>
@@ -178,7 +178,7 @@
   </table>
 
 
-<p><a href="OperationDefinition-TextSearch.xml" no-download="true">Raw xml</a> | <a href="OperationDefinition-TextSearch.xml" download>Download</a></p>
+<p><a href="OperationDefinition-text-search.xml" no-download="true">Raw xml</a> | <a href="OperationDefinition-text-search.xml" download>Download</a></p>
 
   <!-- insert intro if present -->
   
@@ -188,19 +188,20 @@
   <pre class="xml" style="white-space: pre; overflow: hidden"><code class="language-xml">
 
 &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition">OperationDefinition</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;TextSearch&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;text-search&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.text">text</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;extensions&quot;/&gt;
     &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p&gt;URL: [base]/CodeSystem/$text-search&lt;/p&gt;&lt;p&gt;URL: [base]/CodeSystem/[id]/$text-search&lt;/p&gt;&lt;p&gt;Parameters&lt;/p&gt;&lt;table class=&quot;grid&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Use&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Name&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Scope&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Cardinality&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Binding&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Documentation&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;text&lt;/td&gt;&lt;td/&gt;&lt;td&gt;1..1&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://hl7.org/fhir/R4/datatypes.html#string&quot;&gt;string&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;The text to search for.&lt;/p&gt;
 &lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;<a name="end-xhtml"></a>
   &lt;/text&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.url">url</a>
-       <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://github.com/HOT-Ecosystem/tims-poc-ig/OperationDefinition/TextSearch&quot;/&gt;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;https://github.com/HOT-Ecosystem/tims-ig/OperationDefinition/text-search&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;0.0.1&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;TextSearch&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Text search name&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.title">title</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Text search operation&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;draft&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.kind">kind</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;operation&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2023-04-11T21:30:03+00:00&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2023-04-12T17:43:52+00:00&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.contact">contact</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/metadatatypes.html#ContactDetail#ContactDetail.telecom">telecom</a>&gt;
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#ContactPoint#ContactPoint.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;url&quot;/&gt;
@@ -254,7 +255,7 @@
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="OperationDefinition-TextSearch-testing.html">&lt;prev</a>
+                <a href="OperationDefinition-text-search-testing.html">&lt;prev</a>
 
               </td>
               <td style="text-align:center">
@@ -262,7 +263,7 @@
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="OperationDefinition-TextSearch.json.html">next&gt;</a>
+                <a href="OperationDefinition-text-search.json.html">next&gt;</a>
 
               </td>
             </tr>
@@ -272,7 +273,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.com"></a>.  Package tims-poc-ig#0.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 11, 2023 21:30+0000">2023-04-11</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.com"></a>.  Package tims-ig#0.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 12, 2023 17:43+0000">2023-04-12</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

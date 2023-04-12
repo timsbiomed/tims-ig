@@ -1,37 +1,16 @@
 [
   {
-    "id" : "r4-json-patient",
-    "type" : "StructureDefinition",
-    "url" : "http://example.com/minimal-r401/StructureDefinition/r4-json-patient",
-    "version" : "0.0.1",
-    "name" : "R4JsonPatient"
-  },
-  {
-    "id" : "r4-xml.patient",
-    "type" : "StructureDefinition",
-    "url" : "http://example.com/minimal-r401/StructureDefinition/r4-xml.patient",
-    "version" : "0.0.1",
-    "name" : "R4XmlPatient"
-  },
-  {
-    "id" : "tims-poc-ig",
+    "id" : "tims-ig",
     "type" : "ImplementationGuide",
-    "url" : "https://github.com/HOT-Ecosystem/tims-poc-ig/ImplementationGuide/tims-poc-ig",
+    "url" : "https://github.com/HOT-Ecosystem/tims-ig/ImplementationGuide/tims-ig",
     "version" : "0.0.1",
-    "name" : "TIMS POC IG"
+    "name" : "TIMS IG"
   },
   {
-    "id" : "TextSearch",
+    "id" : "text-search",
     "type" : "OperationDefinition",
-    "url" : "https://github.com/HOT-Ecosystem/tims-poc-ig/OperationDefinition/TextSearch",
+    "url" : "https://github.com/HOT-Ecosystem/tims-ig/OperationDefinition/text-search",
     "version" : "0.0.1",
-    "name" : "TextSearch"
-  },
-  {
-    "id" : "fsh-patient",
-    "type" : "StructureDefinition",
-    "url" : "https://github.com/HOT-Ecosystem/tims-poc-ig/StructureDefinition/fsh-patient",
-    "version" : "0.0.1",
-    "name" : "FshPatient"
+    "name" : "Text search name"
   }
 ]

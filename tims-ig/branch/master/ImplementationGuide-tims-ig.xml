@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <ImplementationGuide xmlns="http://hl7.org/fhir">
-  <id value="tims-poc-ig"/>
+  <id value="tims-ig"/>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>TIMS POC IG</h2><p>The official URL for this implementation guide is: </p><pre>https://github.com/HOT-Ecosystem/tims-poc-ig/ImplementationGuide/tims-poc-ig</pre></div>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>TIMS IG</h2><p>The official URL for this implementation guide is: </p><pre>https://github.com/HOT-Ecosystem/tims-ig/ImplementationGuide/tims-ig</pre></div>
   </text>
-  <url value="https://github.com/HOT-Ecosystem/tims-poc-ig/ImplementationGuide/tims-poc-ig"/>
+  <url value="https://github.com/HOT-Ecosystem/tims-ig/ImplementationGuide/tims-ig"/>
   <version value="0.0.1"/>
-  <name value="TIMS POC IG"/>
+  <name value="TIMS IG"/>
   <status value="draft"/>
-  <date value="2023-04-11T21:30:03+00:00"/>
+  <date value="2023-04-12T17:43:52+00:00"/>
   <contact>
     <telecom>
       <system value="url"/>
       <value value="http://example.com"/>
     </telecom>
   </contact>
-  <packageId value="tims-poc-ig"/>
+  <packageId value="tims-ig"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="4.0.1"/>
   <dependsOn id="hl7tx">
@@ -113,7 +113,7 @@
         <valueString value="path-history"/>
       </extension>
       <extension url="value">
-        <valueString value="https://github.com/HOT-Ecosystem/tims-poc-ig/history.html"/>
+        <valueString value="https://github.com/HOT-Ecosystem/tims-ig/history.html"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -313,7 +313,7 @@
         <valueCode value="path-history"/>
       </extension>
       <extension url="value">
-        <valueString value="https://github.com/HOT-Ecosystem/tims-poc-ig/history.html"/>
+        <valueString value="https://github.com/HOT-Ecosystem/tims-ig/history.html"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -430,49 +430,12 @@
     </extension>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/r4-xml.patient"/>
-      </reference>
-      <name value="R4 XML Patient"/>
-      <description value="A R4 XML Patient profile"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/r4-json-patient"/>
-      </reference>
-      <name value="R4 JSON Patient"/>
-      <description value="A R4 JSON Patient profile"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Patient"/>
-      </extension>
-      <reference>
-        <reference value="Patient/ex1"/>
-      </reference>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="StructureDefinition:resource"/>
-      </extension>
-      <reference>
-        <reference value="StructureDefinition/fsh-patient"/>
-      </reference>
-      <name value="Fsh Patient"/>
-      <description value="A patient that is a type of fsh."/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
-        <reference value="OperationDefinition/TextSearch"/>
+        <reference value="OperationDefinition/text-search"/>
       </reference>
+      <name value="Text search operation"/>
     </resource>
     <page>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
@@ -486,7 +449,7 @@
           <valueUrl value="index.html"/>
         </extension>
         <nameUrl value="index.html"/>
-        <title value="TIMS POC IG"/>
+        <title value="TIMS IG"/>
         <generation value="html"/>
       </page>
     </page>

@@ -1,22 +1,22 @@
 {
   "resourceType" : "ImplementationGuide",
-  "id" : "tims-poc-ig",
+  "id" : "tims-ig",
   "text" : {
     "status" : "extensions",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>TIMS POC IG</h2><p>The official URL for this implementation guide is: </p><pre>https://github.com/HOT-Ecosystem/tims-poc-ig/ImplementationGuide/tims-poc-ig</pre></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>TIMS IG</h2><p>The official URL for this implementation guide is: </p><pre>https://github.com/HOT-Ecosystem/tims-ig/ImplementationGuide/tims-ig</pre></div>"
   },
-  "url" : "https://github.com/HOT-Ecosystem/tims-poc-ig/ImplementationGuide/tims-poc-ig",
+  "url" : "https://github.com/HOT-Ecosystem/tims-ig/ImplementationGuide/tims-ig",
   "version" : "0.0.1",
-  "name" : "TIMS POC IG",
+  "name" : "TIMS IG",
   "status" : "draft",
-  "date" : "2023-04-11T21:30:03+00:00",
+  "date" : "2023-04-12T17:43:52+00:00",
   "contact" : [{
     "telecom" : [{
       "system" : "url",
       "value" : "http://example.com"
     }]
   }],
-  "packageId" : "tims-poc-ig",
+  "packageId" : "tims-ig",
   "license" : "CC0-1.0",
   "fhirVersion" : ["4.0.1"],
   "dependsOn" : [{
@@ -147,7 +147,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "https://github.com/HOT-Ecosystem/tims-poc-ig/history.html"
+        "valueString" : "https://github.com/HOT-Ecosystem/tims-ig/history.html"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -422,7 +422,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "https://github.com/HOT-Ecosystem/tims-poc-ig/history.html"
+        "valueString" : "https://github.com/HOT-Ecosystem/tims-ig/history.html"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -583,53 +583,12 @@
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/r4-xml.patient"
-      },
-      "name" : "R4 XML Patient",
-      "description" : "A R4 XML Patient profile"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/r4-json-patient"
-      },
-      "name" : "R4 JSON Patient",
-      "description" : "A R4 JSON Patient profile"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Patient"
-      }],
-      "reference" : {
-        "reference" : "Patient/ex1"
-      }
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "StructureDefinition:resource"
-      }],
-      "reference" : {
-        "reference" : "StructureDefinition/fsh-patient"
-      },
-      "name" : "Fsh Patient",
-      "description" : "A patient that is a type of fsh."
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "OperationDefinition"
       }],
       "reference" : {
-        "reference" : "OperationDefinition/TextSearch"
-      }
+        "reference" : "OperationDefinition/text-search"
+      },
+      "name" : "Text search operation"
     }],
     "page" : {
       "extension" : [{
@@ -645,7 +604,7 @@
           "valueUrl" : "index.html"
         }],
         "nameUrl" : "index.html",
-        "title" : "TIMS POC IG",
+        "title" : "TIMS IG",
         "generation" : "html"
       }]
     },

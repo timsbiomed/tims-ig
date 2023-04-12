@@ -5,25 +5,25 @@
 
 # - resource -------------------------------------------------------------------
 
-<https://github.com/HOT-Ecosystem/tims-poc-ig/ImplementationGuide/tims-poc-ig> a fhir:ImplementationGuide ;
+<https://github.com/HOT-Ecosystem/tims-ig/ImplementationGuide/tims-ig> a fhir:ImplementationGuide ;
   fhir:nodeRole fhir:treeRoot ;
-  fhir:id [ fhir:v "tims-poc-ig"] ; # 
+  fhir:id [ fhir:v "tims-ig"] ; # 
   fhir:text [
      fhir:status [ fhir:v "extensions" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>TIMS POC IG</h2><p>The official URL for this implementation guide is: </p><pre>https://github.com/HOT-Ecosystem/tims-poc-ig/ImplementationGuide/tims-poc-ig</pre></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>TIMS IG</h2><p>The official URL for this implementation guide is: </p><pre>https://github.com/HOT-Ecosystem/tims-ig/ImplementationGuide/tims-ig</pre></div>"
   ] ; # 
-  fhir:url [ fhir:v "https://github.com/HOT-Ecosystem/tims-poc-ig/ImplementationGuide/tims-poc-ig"^^xsd:anyURI] ; # 
+  fhir:url [ fhir:v "https://github.com/HOT-Ecosystem/tims-ig/ImplementationGuide/tims-ig"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.0.1"] ; # 
-  fhir:name [ fhir:v "TIMS POC IG"] ; # 
+  fhir:name [ fhir:v "TIMS IG"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-04-11T21:30:03+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-04-12T17:43:52+00:00"^^xsd:dateTime] ; # 
   fhir:contact ( [
      fhir:telecom ( [
        fhir:system [ fhir:v "url" ] ;
        fhir:value [ fhir:v "http://example.com" ]
      ] )
   ] ) ; # 
-  fhir:packageId [ fhir:v "tims-poc-ig"] ; # 
+  fhir:packageId [ fhir:v "tims-ig"] ; # 
   fhir:license [ fhir:v "CC0-1.0"] ; # 
   fhir:fhirVersion ( [ fhir:v "4.0.1"] ) ; # 
   fhir:dependsOn ( [
@@ -136,7 +136,7 @@
          fhir:value [ fhir:v "path-history" ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "https://github.com/HOT-Ecosystem/tims-poc-ig/history.html" ]
+         fhir:value [ fhir:v "https://github.com/HOT-Ecosystem/tims-ig/history.html" ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
@@ -361,7 +361,7 @@
          fhir:value [ fhir:v "path-history" ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "https://github.com/HOT-Ecosystem/tims-poc-ig/history.html" ]
+         fhir:value [ fhir:v "https://github.com/HOT-Ecosystem/tims-ig/history.html" ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
@@ -494,54 +494,13 @@
      fhir:resource ( [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://github.com/HOT-Ecosystem/tims-poc-ig/StructureDefinition/r4-xml.patient> ;
-         fhir:reference [ fhir:v "StructureDefinition/r4-xml.patient" ]
-       ] ;
-       fhir:name [ fhir:v "R4 XML Patient" ] ;
-       fhir:description [ fhir:v "A R4 XML Patient profile" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://github.com/HOT-Ecosystem/tims-poc-ig/StructureDefinition/r4-json-patient> ;
-         fhir:reference [ fhir:v "StructureDefinition/r4-json-patient" ]
-       ] ;
-       fhir:name [ fhir:v "R4 JSON Patient" ] ;
-       fhir:description [ fhir:v "A R4 JSON Patient profile" ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Patient" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://github.com/HOT-Ecosystem/tims-poc-ig/Patient/ex1> ;
-         fhir:reference [ fhir:v "Patient/ex1" ]
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://github.com/HOT-Ecosystem/tims-poc-ig/StructureDefinition/fsh-patient> ;
-         fhir:reference [ fhir:v "StructureDefinition/fsh-patient" ]
-       ] ;
-       fhir:name [ fhir:v "Fsh Patient" ] ;
-       fhir:description [ fhir:v "A patient that is a type of fsh." ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "OperationDefinition" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://github.com/HOT-Ecosystem/tims-poc-ig/OperationDefinition/TextSearch> ;
-         fhir:reference [ fhir:v "OperationDefinition/TextSearch" ]
-       ]
+         fhir:link <https://github.com/HOT-Ecosystem/tims-ig/OperationDefinition/text-search> ;
+         fhir:reference [ fhir:v "OperationDefinition/text-search" ]
+       ] ;
+       fhir:name [ fhir:v "Text search operation" ]
      ] ) ;
      fhir:page [
        fhir:extension ( [
@@ -557,7 +516,7 @@
            fhir:value [ fhir:v "index.html"^^xsd:anyURI ]
          ] ) ;
          fhir:name [ fhir:v "index.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "TIMS POC IG" ] ;
+         fhir:title [ fhir:v "TIMS IG" ] ;
          fhir:generation [ fhir:v "html" ]
        ] )
      ] ;

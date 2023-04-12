@@ -1,3 +1,5 @@
+<!-- layouts\layout-changehistory.html -->
+<!-- get modelType -->
 
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -5,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>TIMS-POC-IG\null - TTL Representation - FHIR v4.0.1</title>
+    <title>TIMS-IG\ - FHIR v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -41,8 +43,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"2.5"}
-    h3,h4,h5,h6{--heading-prefix:"2.5"}</style>
+    <style type="text/css">h2{--heading-prefix:""}
+    h3,h4,h5,h6{--heading-prefix:""}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -76,7 +78,7 @@
             <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
             <div class="nav-collapse collapse navbar-inverse-collapse">
               <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
-  <li><a href="index.html">IG Home</a></li>
+  <li><a href="index.html">Home</a></li>
   <li><a href="toc.html">Table of Contents</a></li>
 
 </ul>      
@@ -92,11 +94,9 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b></b></li>
+          
 
           <span style="float:right;">
-
-            <a href="Patient-ex1.json.html">&lt;prev</a> | 
 
             <a href="#bottom">bottom</a>
 
@@ -112,9 +112,10 @@
         <div class="row">
           <div class="inner-wrapper">
 
-<div style="counter-reset: section 9" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">TIMS POC IG - Local Development build (v0.0.1). See the <a href="https://github.com/HOT-Ecosystem/tims-poc-ig/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
 
+<div style="counter-reset: section 10" class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">TIMS IG - Local Development build (v0.0.1). See the <a href="https://github.com/HOT-Ecosystem/tims-ig/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
 
 
 
@@ -126,28 +127,28 @@
 <ul class="nav nav-tabs">
 
   <li>
-    <a href="Patient-ex1.html">Narrative Content</a>
+    <a href="OperationDefinition-text-search.html">Narrative Content</a>
   </li>
 
 
 
   
     <li>
-      <a href="Patient-ex1.xml.html">XML</a>
+      <a href="OperationDefinition-text-search.xml.html">XML</a>
     </li>
   
 
 
   
     <li>
-      <a href="Patient-ex1.json.html">JSON</a>
+      <a href="OperationDefinition-text-search.json.html">JSON</a>
     </li>
   
 
 
   
-    <li class="active">
-      <a href="#">TTL</a>
+    <li>
+      <a href="OperationDefinition-text-search.ttl.html">TTL</a>
     </li>
   
 
@@ -156,58 +157,14 @@
 </ul>
 
 
-<a name="root"> </a>
+  <a name="root"> </a>
+  <h2 id="root">: Text search name - Change History</h2>
+  <p>History of changes for text-search .</p>
 
-
-<h2 id="root">: null - TTL Representation</h2>
-  <table class="colsi">
-    <tr>
-
-      <td colspan="2">
-        
-          
-          
-        
-      </td>
-
-    </tr>
-  </table>
-
-
-<p><a href="Patient-ex1.ttl" no-download="true">Raw ttl</a> | <a href="Patient-ex1.ttl" download>Download</a></p>
-
-  <!-- insert intro if present -->
   
-
-
-
-  <pre class="rdf" style="white-space: pre; overflow: hidden"><code class="language-turtle">
-@prefix fhir: &lt;http://hl7.org/fhir/&gt; .
-@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
-@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
-@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
-
-# - resource -------------------------------------------------------------------
-
- a fhir:Patient ;
-  <a href="http://hl7.org/fhir/R4/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot ;
-  <a href="http://hl7.org/fhir/R4/patient.html#Patient.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;ex1&quot;] ; # 
-  <a href="http://hl7.org/fhir/R4/patient.html#Patient.text">fhir:text</a> [
-<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;generated&quot; ] ;
-fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p style=\&quot;border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\&quot;&gt;&lt;b&gt;Anonymous Patient&lt;/b&gt; female, DoB Unknown&lt;/p&gt;&lt;hr/&gt;&lt;/div&gt;&quot;
-  ] ; # 
-  <a href="http://hl7.org/fhir/R4/patient.html#Patient.gender">fhir:gender</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;female&quot;] . # 
-
-</code></pre>
-
-
-
-  <!-- insert notes if present -->
-  
-
-
 
 </div>
+
         </div>  <!-- /inner-wrapper -->
       </div>  <!-- /row -->
     </div>  <!-- /container -->
@@ -215,6 +172,29 @@ fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p
 
   <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
   <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    try {
+      var currentTabIndex = sessionStorage.getItem('fhir-resource-tab-index');
+    } catch(exception) {
+    }
+
+    if (!currentTabIndex)
+      currentTabIndex = '0';
+
+    $( '#tabs' ).tabs({
+      active: currentTabIndex,
+      activate: function( event, ui ) {
+        var active = $('.selector').tabs('option', 'active');
+        currentTabIndex = ui.newTab.index();
+        document.activeElement.blur();
+        try {
+          sessionStorage.setItem('fhir-resource-tab-index', currentTabIndex);
+        } catch(exception) {
+        }
+      }
+    });
+  </script>
 
   <script type="text/javascript">
     $(document).ready(function(){
@@ -233,7 +213,7 @@ fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="Patient-ex1.json.html">&lt;prev</a>
+                <span style="visibility:hidden">&lt;prev</span>
 
               </td>
               <td style="text-align:center">
@@ -251,7 +231,7 @@ fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.com"></a>.  Package tims-poc-ig#0.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 11, 2023 21:30+0000">2023-04-11</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.com"></a>.  Package tims-ig#0.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 12, 2023 17:43+0000">2023-04-12</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

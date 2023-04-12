@@ -1,9 +1,0 @@
-{
-  "resourceType" : "Patient",
-  "id" : "ex1",
-  "text" : {
-    "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\"><b>Anonymous Patient</b> female, DoB Unknown</p><hr/></div>"
-  },
-  "gender" : "female"
-}
