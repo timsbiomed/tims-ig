@@ -16,7 +16,7 @@
   fhir:version [ fhir:v "0.0.1"] ; # 
   fhir:name [ fhir:v "TIMS IG"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-04-17T17:07:30+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-04-17T17:27:58+00:00"^^xsd:dateTime] ; # 
   fhir:contact ( [
      fhir:telecom ( [
        fhir:system [ fhir:v "url" ] ;
