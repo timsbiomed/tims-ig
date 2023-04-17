@@ -209,15 +209,46 @@
 
 <h1 id="text-search">Text search</h1>
 
-<p>This operation retrieves CodeSystem concepts based on text search parameters. The data elements of a concept that can be considered for text search include:</p>
+<p>This is a work in progress FHIR Operation definition to specify a rich text search capability for the CodeSystem resource. A subset of this specification can later be reused to specify a similar text search use case for ValueSets.</p>
 
+<p>Feedback and comments are welcome <a href="https://github.com/HOT-Ecosystem/hapi-issues/issues/102">here</a></p>
+
+<p>This operation retrieves CodeSystem concepts based on text search parameters. The data elements of a concept that can be considered for text search include:</p>
 <ul>
-  <li><a href="http://hl7.org/fhir/codesystem-definitions.html#CodeSystem.concept.display"><code class="language-plaintext highlighter-rouge">concept.display</code></a> The label. A single entry.</li>
-  <li><a href="http://hl7.org/fhir/codesystem-definitions.html#CodeSystem.concept.designation"><code class="language-plaintext highlighter-rouge">concept.designation</code></a> Additional use and language specific concept representations. Multiple entries.</li>
-  <li><a href="http://hl7.org/fhir/codesystem-definitions.html#CodeSystem.concept.definition"><code class="language-plaintext highlighter-rouge">concept.definition</code></a> The concept definition. A single entry.</li>
+  <li><a href="http://hl7.org/fhir/R4/codesystem-definitions.html#CodeSystem.concept.display"><code class="language-plaintext highlighter-rouge">concept.display</code></a> The label. A single entry.</li>
+  <li><a href="http://hl7.org/fhir/R4/codesystem-definitions.html#CodeSystem.concept.designation"><code class="language-plaintext highlighter-rouge">concept.designation</code></a> Additional use and language specific concept representations. Multiple entries.</li>
+  <li><a href="http://hl7.org/fhir/R4/codesystem-definitions.html#CodeSystem.concept.definition"><code class="language-plaintext highlighter-rouge">concept.definition</code></a> The concept definition. A single entry.</li>
 </ul>
 
-<p>The <a href="http://hl7.org/fhir/codesystem-definitions.html#CodeSystem.property"><code class="language-plaintext highlighter-rouge">concept.property</code></a> entries are considered structured data and not text searched.</p>
+<p>The <a href="http://hl7.org/fhir/R4/codesystem-definitions.html#CodeSystem.property"><code class="language-plaintext highlighter-rouge">concept.property</code></a> entries are considered structured data and not considered for text search purposes.</p>
+
+<p>The scope and type of search can be specified by:</p>
+<ul>
+  <li>Invoking the <code class="language-plaintext highlighter-rouge">baseurl/CodeSystem</code> endpoint to search over one or more CodeSystems and their versions.</li>
+  <li>Invoking the <code class="language-plaintext highlighter-rouge">baseurl/CodeSystem/{id}</code> endpoint to search within a specific version of a CodeSystem.</li>
+  <li>Possible Operation input parameters (note: need to review composite parameters and refactor this list):
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">text</code> the search text.</li>
+      <li><code class="language-plaintext highlighter-rouge">mode</code> the text search mode. See below.</li>
+      <li><code class="language-plaintext highlighter-rouge">query</code> the search query from a query language.</li>
+      <li><code class="language-plaintext highlighter-rouge">codesystem</code>: one or more CodeSystem <code class="language-plaintext highlighter-rouge">url</code>s, with or without a version qualifier.</li>
+      <li><code class="language-plaintext highlighter-rouge">display</code>: boolean to indicate <code class="language-plaintext highlighter-rouge">concept.display</code> based search. Default?</li>
+      <li><code class="language-plaintext highlighter-rouge">language</code>: the <code class="language-plaintext highlighter-rouge">concept.designation.language</code> to consider during search.</li>
+      <li><code class="language-plaintext highlighter-rouge">use</code>: the <code class="language-plaintext highlighter-rouge">concept.designation.use</code> to consider during search.</li>
+      <li><code class="language-plaintext highlighter-rouge">definition</code>: boolean to indicate <code class="language-plaintext highlighter-rouge">concept.definition</code> based search.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>There are several text search approaches to improve finding matches, or to help with a specific use case. The approaches affect the indexing of the text in order to be able to use such approaches. These include:</p>
+<ul>
+  <li>Phrase search. A match is based on full phrases. For example, this would allow for a search for an exact concept label match, with or without some normalization.</li>
+  <li>Word search. A match is based on full words with possible normalization and filtering of such words. This implies converting the full text into individual words in the index.</li>
+  <li>n-gram search. This allows for searching with a fragment of the text. This is useful for auto-completion use cases.</li>
+  <li>n-gram on word or phrase boundaries.  As above but the n-gram is fixed to the start or end of a word or phrase.</li>
+  <li>phonetic search.</li>
+</ul>
+
 
 </div>
 
@@ -242,7 +273,15 @@
 
 <div style="display:inline-block" markdown="1">
 
-<p>Note text.</p>
+<h1 id="notes">Notes</h1>
+
+<h2 id="outstanding-issues">Outstanding issues:</h2>
+<ul>
+  <li>Should <a href="http://hl7.org/fhir/R4/resource.html#Meta"><code class="language-plaintext highlighter-rouge">meta.versionId</code></a> based search be supported?</li>
+  <li>Even though the text search does not consider text values from <code class="language-plaintext highlighter-rouge">concept.property</code>, should the returned concepts be filterable or ordered by their properties? This affects the input parameters.</li>
+  <li>Review http://hl7.org/fhir/R4/search.html#composite</li>
+</ul>
+
 
 </div>
 
@@ -295,7 +334,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.com"></a>.  Package tims-ig#0.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Apr 17, 2023 15:26+0000">2023-04-17</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://example.com"></a>.  Package tims-ig#0.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Apr 17, 2023 17:07+0000">2023-04-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

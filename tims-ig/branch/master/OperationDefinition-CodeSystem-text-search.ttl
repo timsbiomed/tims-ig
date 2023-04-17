@@ -18,7 +18,7 @@
   fhir:title [ fhir:v "Text search operation"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
   fhir:kind [ fhir:v "operation"] ; # 
-  fhir:date [ fhir:v "2023-04-17T15:26:10+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-04-17T17:07:30+00:00"^^xsd:dateTime] ; # 
   fhir:contact ( [
      fhir:telecom ( [
        fhir:system [ fhir:v "url" ] ;
