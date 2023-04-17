@@ -3,18 +3,18 @@
 
 err = 0, warn = 7, info = 0
 IG Publisher Version: 1.3.4
-Generated Wed Apr 12 17:44:05 UTC 2023. FHIR version 4.0.1 for tims-ig#0.0.1 (canonical = https://github.com/HOT-Ecosystem/tims-ig)
+Generated Mon Apr 17 15:26:18 UTC 2023. FHIR version 4.0.1 for tims-ig#0.0.1 (canonical = https://github.com/HOT-Ecosystem/tims-ig)
  Build Errors : 0 / 5 / 0
- /ig/fsh-generated/resources/OperationDefinition-text-search : 0 / 1 / 1
+ /ig/fsh-generated/resources/OperationDefinition-CodeSystem-text-search : 0 / 1 / 1
  /ig/input/ig : 0 / 1 / 1
 </table>
 == n/a ==
-WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource OperationDefinition/text-search.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource OperationDefinition/CodeSystem-text-search.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: 1: The HTML fragment 'ip-statements.xhtml' is not included anywhere in the produced implementation guide
 WARNING: 2: An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide
 WARNING: 3: An HTML fragment from the set [dependency-table.xhtml, dependency-table-short.xhtml] is not included anywhere in the produced implementation guide
 WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
-== fsh-generated/resources/OperationDefinition-text-search.json ==
-WARNING: OperationDefinition/text-search: OperationDefinition: Rule opd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed
+== fsh-generated/resources/OperationDefinition-CodeSystem-text-search.json ==
+WARNING: OperationDefinition/CodeSystem-text-search: OperationDefinition: Rule opd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed
 == input/ig.xml ==
 WARNING: ImplementationGuide/tims-ig: ImplementationGuide: Rule ig-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed

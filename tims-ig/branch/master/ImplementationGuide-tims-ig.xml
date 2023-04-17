@@ -9,7 +9,7 @@
   <version value="0.0.1"/>
   <name value="TIMS IG"/>
   <status value="draft"/>
-  <date value="2023-04-12T17:43:52+00:00"/>
+  <date value="2023-04-17T15:26:10+00:00"/>
   <contact>
     <telecom>
       <system value="url"/>
@@ -433,7 +433,7 @@
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
-        <reference value="OperationDefinition/text-search"/>
+        <reference value="OperationDefinition/CodeSystem-text-search"/>
       </reference>
       <name value="Text search operation"/>
     </resource>

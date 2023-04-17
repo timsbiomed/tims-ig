@@ -16,7 +16,7 @@
   fhir:version [ fhir:v "0.0.1"] ; # 
   fhir:name [ fhir:v "TIMS IG"] ; # 
   fhir:status [ fhir:v "draft"] ; # 
-  fhir:date [ fhir:v "2023-04-12T17:43:52+00:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-04-17T15:26:10+00:00"^^xsd:dateTime] ; # 
   fhir:contact ( [
      fhir:telecom ( [
        fhir:system [ fhir:v "url" ] ;
@@ -497,8 +497,8 @@
          fhir:value [ fhir:v "OperationDefinition" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://github.com/HOT-Ecosystem/tims-ig/OperationDefinition/text-search> ;
-         fhir:reference [ fhir:v "OperationDefinition/text-search" ]
+         fhir:link <https://github.com/HOT-Ecosystem/tims-ig/OperationDefinition/CodeSystem-text-search> ;
+         fhir:reference [ fhir:v "OperationDefinition/CodeSystem-text-search" ]
        ] ;
        fhir:name [ fhir:v "Text search operation" ]
      ] ) ;

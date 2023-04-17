@@ -7,9 +7,9 @@
     "name" : "TIMS IG"
   },
   {
-    "id" : "text-search",
+    "id" : "CodeSystem-text-search",
     "type" : "OperationDefinition",
-    "url" : "https://github.com/HOT-Ecosystem/tims-ig/OperationDefinition/text-search",
+    "url" : "https://github.com/HOT-Ecosystem/tims-ig/OperationDefinition/CodeSystem-text-search",
     "version" : "0.0.1",
     "name" : "Text search name"
   }
