@@ -1,4 +1,4 @@
-Instance: text-search
+Instance: CodeSystem-text-search
 InstanceOf: http://hl7.org/fhir/StructureDefinition/OperationDefinition
 Title: "Text search operation"
 Description: "Text search description"
